@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations XML_version="1.2" id="configurations_0">
+<instance XML_version="1.2" desc="C6678 Device Functional Simulator, Little Endian" href="configurations/tisim_c6678_pv_le.xml" id="C6678 Device Functional Simulator, Little Endian" xml="tisim_c6678_pv_le.xml" xmlpath="configurations"/>
+    <configuration XML_version="1.2" description="Simulates the C6678 device which includes C66x CorePac(8x), MSMC (Multicore Shared Memory Controller), Inter-processor communication, CPINTC(4x), EDMA(3x), TIMER64(16x), Semaphore2,Semaphore2, DDR3 Memory controller and DDR3 memory, GPIO, Queue-manager Sub-system, SRIO and Network coprocessor (Packet Accelerator, Switch Sub-system), PCIe Sub-system. Does not model Power and Sleep Controller. This configuration is functional (bit accurate) . This configuration is suitable for applications development and understanding the system behavior, but doesn't support cycle accuracy at the device level." id="C6678 Device Functional Simulator, Little Endian">
+        <connection XML_version="1.2" desc="C6678 Device Functional Simulator, Little Endian_0" id="C6678 Device Functional Simulator, Little Endian"/>
+    </configuration>
+</configurations>

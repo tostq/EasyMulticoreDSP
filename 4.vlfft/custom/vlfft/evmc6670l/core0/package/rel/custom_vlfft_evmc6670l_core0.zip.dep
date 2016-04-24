@@ -1,0 +1,38 @@
+custom_vlfft_evmc6670l_core0.zip: Platform.xdc
+Platform.xdc:
+custom_vlfft_evmc6670l_core0.zip: Platform.xs
+Platform.xs:
+custom_vlfft_evmc6670l_core0.zip: config.bld
+config.bld:
+custom_vlfft_evmc6670l_core0.zip: package/.vers_b150
+package/.vers_b150:
+custom_vlfft_evmc6670l_core0.zip: package/.vers_g180
+package/.vers_g180:
+custom_vlfft_evmc6670l_core0.zip: package/.vers_r170
+package/.vers_r170:
+custom_vlfft_evmc6670l_core0.zip: package/.xdc-y25
+package/.xdc-y25:
+custom_vlfft_evmc6670l_core0.zip: package/build.cfg
+package/build.cfg:
+custom_vlfft_evmc6670l_core0.zip: package/custom.vlfft.evmc6670l.core0.ccs
+package/custom.vlfft.evmc6670l.core0.ccs:
+custom_vlfft_evmc6670l_core0.zip: package/custom.vlfft.evmc6670l.core0.sch
+package/custom.vlfft.evmc6670l.core0.sch:
+custom_vlfft_evmc6670l_core0.zip: package/custom_vlfft_evmc6670l_core0.class
+package/custom_vlfft_evmc6670l_core0.class:
+custom_vlfft_evmc6670l_core0.zip: package/custom_vlfft_evmc6670l_core0.java
+package/custom_vlfft_evmc6670l_core0.java:
+custom_vlfft_evmc6670l_core0.zip: package/package.bld.xml
+package/package.bld.xml:
+custom_vlfft_evmc6670l_core0.zip: package/package.defs.h
+package/package.defs.h:
+custom_vlfft_evmc6670l_core0.zip: package/package.ext.xml
+package/package.ext.xml:
+custom_vlfft_evmc6670l_core0.zip: package/package.rel.dot
+package/package.rel.dot:
+custom_vlfft_evmc6670l_core0.zip: package/package_custom.vlfft.evmc6670l.core0.c
+package/package_custom.vlfft.evmc6670l.core0.c:
+custom_vlfft_evmc6670l_core0.zip: package.bld
+package.bld:
+custom_vlfft_evmc6670l_core0.zip: package.xdc
+package.xdc:

@@ -1,0 +1,1 @@
+许可证文件，拷贝到/ccsv5/ccs_base/DebugServer/license 下面，即可使用。

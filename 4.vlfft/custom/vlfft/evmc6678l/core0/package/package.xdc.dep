@@ -1,0 +1,77 @@
+clean::
+	$(RM) package/custom.vlfft.evmc6678l.core0.sch
+	$(RM) package/.vers_g180
+	$(RM) package/.vers_r170
+	$(RM) package/.vers_b150
+	$(RM) package/.vers_c150
+	$(RM) package/.xdc-v56
+	$(RM) package/custom_vlfft_evmc6678l_core0.java
+	$(RM) package/custom_vlfft_evmc6678l_core0.class
+	$(RM) package/package_custom.vlfft.evmc6678l.core0.c
+	$(RM) package/package.defs.h
+	$(RM) package/package.doc.xml
+	$(RM) package/custom.vlfft.evmc6678l.core0.ccs
+
+.interfaces: package/custom.vlfft.evmc6678l.core0.sch package/.vers_g180 package/.vers_r170 package/.vers_b150 package/.vers_c150 package/.xdc-v56 package/custom_vlfft_evmc6678l_core0.java package/custom_vlfft_evmc6678l_core0.class package/package_custom.vlfft.evmc6678l.core0.c package/package.defs.h package/package.doc.xml package/custom.vlfft.evmc6678l.core0.ccs 
+package/package.xdc.inc: package/.vers_g180
+package/.vers_g180:
+package/package.xdc.inc: package/.vers_r170
+package/.vers_r170:
+package/package.xdc.inc: package/.vers_b150
+package/.vers_b150:
+package/package.xdc.inc: package/.vers_c150
+package/.vers_c150:
+
+.interfaces: Platform.xdc 
+
+# schema include file dependencies
+Platform.xs:
+package/package.xdc.inc: Platform.xs
+
+# schema update dependencies
+package/package.xdc.inc: Platform.xdc
+package/package.xdc.inc: xdc/IPackage.xdc
+xdc/IPackage.xdc:
+vpath xdc/IPackage.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/platform/IPlatform.xdc
+xdc/platform/IPlatform.xdc:
+vpath xdc/platform/IPlatform.xdc $(XPKGVPATH)
+package/package.xdc.inc: ti/platforms/generic/Platform.xdc
+ti/platforms/generic/Platform.xdc:
+vpath ti/platforms/generic/Platform.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/platform/IExeContext.xdc
+xdc/platform/IExeContext.xdc:
+vpath xdc/platform/IExeContext.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/platform/ICpuDataSheet.xdc
+xdc/platform/ICpuDataSheet.xdc:
+vpath xdc/platform/ICpuDataSheet.xdc $(XPKGVPATH)
+package/package.xdc.inc: xdc/platform/IPeripheral.xdc
+xdc/platform/IPeripheral.xdc:
+vpath xdc/platform/IPeripheral.xdc $(XPKGVPATH)
+
+ifneq (clean,$(MAKECMDGOALS))
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/xbean.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/xbean.jar
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/services/intern/xsr/java/package.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/services/intern/xsr/java/package.jar
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/antlr.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/antlr.jar
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/jsr173_api.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/jsr173_api.jar
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/services/spec/java/package.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/services/spec/java/package.jar
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/services/intern/cmd/java/package.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/services/intern/cmd/java/package.jar
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/services/global/java/package.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/services/global/java/package.jar
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/ecj.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/ecj.jar
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/tar.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/tar.jar
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/js.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/shelf/java/js.jar
+C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/services/intern/gen/java/package.jar:
+package/package.xdc.inc: C:/Program\ Files/Texas\ Instruments/xdctools_3_20_08_88/packages/xdc/services/intern/gen/java/package.jar
+endif
+# goals for files generated during schema generation but unspecified by schema's pattern rule
+

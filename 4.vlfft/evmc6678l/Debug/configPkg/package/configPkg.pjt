@@ -1,0 +1,8 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="configPkg"
+ProjectType=External
+CPUFamily=TMS320C66XX
+Tool="CustomBuilder"
+Config="Package"
+[Source Files]

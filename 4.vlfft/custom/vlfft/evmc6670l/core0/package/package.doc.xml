@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package kind='package' name='custom.vlfft.evmc6670l.core0' nodoc='0' root='../../../../' summary='File+generated+by+platform+wizard.+DO+NOT+MODIFY'>
+    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecustom.vlfft.evmc6670l.core0%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+    <line tab='0' content='%7D'/>
+    <unit name='Platform' kind='module' nodoc='0' metaonly='1' summary='File+generated+by+platform+wizard.+DO+NOT+MODIFY' inherits='xdc.platform.IPlatform'>
+        <synopSpec>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Epackage%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fcustom%2Fvlfft%2Fevmc6670l%2Fcore0%2Fpackage.html%22+title%3D%22custom.vlfft.evmc6670l.core0%22%3Ecustom.vlfft.evmc6670l.core0%3C%2Fa%3E%3B'/>
+            <line blank='1' always='0'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EPlatform%3C%2Fspan%3E%3C%2Fgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3E+inherits+%3C%2Fspan%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%22+title%3D%22xdc.platform.IPlatform%22%3EIPlatform%3C%2Fa%3E+%7B'/>
+            <line tab='0' content='%7D'/>
+        </synopSpec>
+        <specInfo>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Emodule%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EPlatform%3C%2Fspan%3E%3C%2Fgo%3E+%7B%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+            <line tab='0' comment='inherits+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%22+title%3D%22xdc.platform.IPlatform%22%3Exdc.platform.IPlatform%3C%2Fa%3E'/>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+        </specInfo>
+        <synopMeta>
+            <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+Platform+%3D+%3Cspan+class%3D%22xdoc-kw3%22%3Exdc.useModule%3C%2Fspan%3E%28%3Cspan+class%3D%22xdoc-id%22%3E%27custom.vlfft.evmc6670l.core0.Platform%27%3C%2Fspan%3E%29%3B'/>
+        </synopMeta>
+        <group name='module-wide constants &amp; types'>
+            <decl spacer='1'/>
+            <decl kind='typedef' name='MemoryMap' anchor='.Memory.Map' altext='custom.vlfft.evmc6670l.core0.Platform.MemoryMap' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Type+to+be+used+for+maps+of+Memory+objects' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Memory.Map%22+title%3D%22xdc.platform.IPlatform.MemoryMap%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Etypedef%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Memory%22+title%3D%22xdc.platform.IPlatform.Memory%22%3EIPlatform.Memory%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMemoryMap%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopTarg>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Etypedef%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Memory%22+title%3D%22xdc.platform.IPlatform.Memory%22%3EIPlatform_Memory%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EPlatform_MemoryMap%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw2%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopTarg>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='Board' anchor='.Board' altext='custom.vlfft.evmc6670l.core0.Platform.Board' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='Board-level+description' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Board%22+title%3D%22xdc.platform.IPlatform.Board%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EBoard%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='unique+id+within+the+platform' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eid%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='name+of+the+board' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EboardName%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='optional+family+name' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EboardFamily%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='optional+revision+string' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EboardRevision%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EPlatform.%3Cspan+class%3D%22xdoc-id%22%3EBoard%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='unique+id+within+the+platform' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eid%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='name+of+the+board' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EboardName%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='optional+family+name' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EboardFamily%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='optional+revision+string' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EboardRevision%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+            </decl>
+            <decl spacer='1'/>
+            <decl kind='struct' name='Memory' anchor='.Memory' altext='custom.vlfft.evmc6670l.core0.Platform.Memory' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary='A+named+contiguous+range+of+addresses' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Memory%22+title%3D%22xdc.platform.IPlatform.Memory%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Emetaonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Estruct%3C%2Fspan%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EMemory%3C%2Fspan%3E%3C%2Fgo%3E+%7B'/>
+                    <line tab='1' comment='description+of+this+block' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecomment%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='name+of+memory+segment' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='%22code%22%2C+%22data%22%2C+%22code%2Fdata%22%2C+etc...' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Espace%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='page+of+memory+segment' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epage%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='base+address+of+memory+segment' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ebase%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='length+of+memory+segment' content='%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='1' comment='attributes+of+memory%3A+%22RWX%22' content='%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eaccess%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%7D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+%3Ci%3Eobj%3C%2Fi%3E+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+%3Cgo%3EPlatform.%3Cspan+class%3D%22xdoc-id%22%3EMemory%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line blank='1' always='0'/>
+                    <line tab='1' comment='description+of+this+block' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecomment%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='name+of+memory+segment' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='%22code%22%2C+%22data%22%2C+%22code%2Fdata%22%2C+etc...' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Espace%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='page+of+memory+segment' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Epage%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='base+address+of+memory+segment' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ebase%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='length+of+memory+segment' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Elen%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EUInt%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='1' comment='attributes+of+memory%3A+%22RWX%22' content='%3Ci%3Eobj%3C%2Fi%3E.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eaccess%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Memory+structures+are+used+in+the+description+of+the+memory+available%0A++from+CPUs+and+platforms.'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='module-wide config parameters'>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl spacer='1'/>
+            <decl kind='config' name='CPU' anchor='.C.P.U' altext='custom.vlfft.evmc6670l.core0.Platform.CPU' nodoc='0' external='1' overrides='0' readonly='0' instance='0' summary=''>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fplatforms%2Fgeneric%2FPlatform.html%23.Instance%22+title%3D%22ti.platforms.generic.Platform.Instance%22%3EPlatform.Instance%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ECPU%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252Fti%252Fplatforms%252Fgeneric%252FPlatform.html%2523per-instance_creation%2522%2Btitle%253D%2522ti.platforms.generic.Platform.create%2522%253EPlatform.create%253C%252Fa%253E%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3EPlatform.%3Cspan+class%3D%22xdoc-id%22%3ECPU%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fti%2Fplatforms%2Fgeneric%2FPlatform.html%23.Instance%22+title%3D%22ti.platforms.generic.Platform.Instance%22%3EPlatform.Instance%3C%2Fa%3E%3C%2Fi%3E+%253Ca%2Bclass%253D%2522xdoc-link%2522%2Bhref%253D%2522..%252F..%252F..%252F..%252Fti%252Fplatforms%252Fgeneric%252FPlatform.html%2523per-instance_creation%2522%2Btitle%253D%2522ti.platforms.generic.Platform.create%2522%253EPlatform.create%253C%252Fa%253E%3B'/>
+                </synopMeta>
+            </decl>
+        </group>
+        <group name='module-wide functions'>
+            <decl spacer='1'/>
+        </group>
+        <group name='$instance'>
+            <synopSpec>
+                <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Einstance%3C%2Fspan%3E%3A'/>
+                <line blank='1' always='0'/>
+            </synopSpec>
+        </group>
+        <group name='per-instance config parameters'>
+            <synopMeta>
+                <line tab='0' comment='Instance+config-params+object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Platform.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                <line tab='1' comment='The+default+segment+for+code+sections' anchor='code.Memory' altext='custom.vlfft.evmc6670l.core0.Platform.codeMemory' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcodeMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522DDR_1%2522%3B'/>
+                <line tab='1' comment='A+custom+mapping+of+memory+names+to+memory+objects' anchor='custom.Memory.Map' altext='xdc.platform.IPlatform.customMemoryMap' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcustomMemoryMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Memory%22+title%3D%22xdc.platform.IPlatform.Memory%22%3EIPlatform.Memory%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                <line tab='1' comment='The+default+segment+for+data+sections' anchor='data.Memory' altext='custom.vlfft.evmc6670l.core0.Platform.dataMemory' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdataMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522L2SRAM%2522%3B'/>
+                <line tab='1' comment='A+mapping+of+memory+names+to+memory+objects+for+external+memory' anchor='external.Memory.Map' altext='xdc.platform.IPlatform.externalMemoryMap' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EexternalMemoryMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Memory%22+title%3D%22xdc.platform.IPlatform.Memory%22%3EIPlatform.Memory%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                <line tab='1' comment='A+map+for+renaming+memory+objects' anchor='rename.Map' altext='xdc.platform.IPlatform.renameMap' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErenameMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                <line tab='1' comment='A+mapping+of+linker+output+section+names+to+memory+segments' anchor='sect.Map' altext='xdc.platform.IPlatform.sectMap' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsectMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                <line tab='1' comment='The+default+segment+for+stack' anchor='stack.Memory' altext='custom.vlfft.evmc6670l.core0.Platform.stackMemory' content='params.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstackMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522L2SRAM%2522%3B'/>
+            </synopMeta>
+            <decl spacer='1'/>
+            <decl kind='config' name='codeMemory' anchor='code.Memory' altext='custom.vlfft.evmc6670l.core0.Platform.codeMemory' nodoc='0' external='1' overrides='1' readonly='0' instance='1' summary='The+default+segment+for+code+sections' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23code.Memory%22+title%3D%22xdc.platform.IPlatform.codeMemory%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eoverride+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcodeMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522DDR_1%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Platform.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EcodeMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522DDR_1%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Each+target+has+a+section+map+with+keys+equal+to+the+names+of+all%0A++sections+that+compiler+and+assembler+for+that+target+generate.+The%0A++value+for+each+key+is+either+%22code%22+or+%22data%22+or+%22stack%22.+A+linker%0A++template+reads+that+map+and+puts+all+%22code%22+sections+in+the+segment%0A++defined+by+this+configuration+parameter.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23data.Memory%22+title%3D%22dataMemory%22%3EdataMemory%3C%2Fa%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23stack.Memory%22+title%3D%22stackMemory%22%3EstackMemory%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='customMemoryMap' anchor='custom.Memory.Map' altext='custom.vlfft.evmc6670l.core0.Platform.customMemoryMap' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='A+custom+mapping+of+memory+names+to+memory+objects' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23custom.Memory.Map%22+title%3D%22xdc.platform.IPlatform.customMemoryMap%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Memory%22+title%3D%22xdc.platform.IPlatform.Memory%22%3EIPlatform.Memory%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcustomMemoryMap%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Platform.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EcustomMemoryMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Memory%22+title%3D%22xdc.platform.IPlatform.Memory%22%3EIPlatform.Memory%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+allows+platform+instances+to+completely+overwrite+a+%0A++default+memory+map+based+on+the+internal+memory+map+coming+from+CPU%27s%0A++memory+map+and+externalMemoryMap.'/>
+                    <docPara content='Custom+memory+map+must+fit+within+the+default+memory+map.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='dataMemory' anchor='data.Memory' altext='custom.vlfft.evmc6670l.core0.Platform.dataMemory' nodoc='0' external='1' overrides='1' readonly='0' instance='1' summary='The+default+segment+for+data+sections' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23data.Memory%22+title%3D%22xdc.platform.IPlatform.dataMemory%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eoverride+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EdataMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522L2SRAM%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Platform.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EdataMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522L2SRAM%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Each+target+has+a+section+map+with+keys+equal+to+the+names+of+all%0A++sections+that+compiler+and+assembler+for+that+target+generate.+The%0A++value+for+each+key+is+either+%22code%22+or+%22data%22+or+%22stack%22.+A+linker%0A++template+reads+that+map+and+puts+all+%22data%22+sections+in+the+segment%0A++defined+by+this+configuration+parameter.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23code.Memory%22+title%3D%22codeMemory%22%3EcodeMemory%3C%2Fa%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23stack.Memory%22+title%3D%22stackMemory%22%3EstackMemory%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='externalMemoryMap' anchor='external.Memory.Map' altext='custom.vlfft.evmc6670l.core0.Platform.externalMemoryMap' nodoc='0' external='1' overrides='0' readonly='1' instance='1' summary='A+mapping+of+memory+names+to+memory+objects+for+external+memory' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23external.Memory.Map%22+title%3D%22xdc.platform.IPlatform.externalMemoryMap%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Ereadonly+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Memory%22+title%3D%22xdc.platform.IPlatform.Memory%22%3EIPlatform.Memory%3C%2Fa%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EexternalMemoryMap%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Platform.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econst%3C%2Fspan%3E+%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EexternalMemoryMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23.Memory%22+title%3D%22xdc.platform.IPlatform.Memory%22%3EIPlatform.Memory%3C%2Fa%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Ci%3Ecomputed+value%3C%2Fi%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+parameter+defines+the+external+portion+of+the+platform%27s+memory%0A++map.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='renameMap' anchor='rename.Map' altext='custom.vlfft.evmc6670l.core0.Platform.renameMap' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='A+map+for+renaming+memory+objects' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23rename.Map%22+title%3D%22xdc.platform.IPlatform.renameMap%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3ErenameMap%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Platform.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3ErenameMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='This+map+renames+memory+objects.+If+you+do+not+want+to+change%0A++addresses+in+the+default+memory+map%2C+but+you+only+want+to+rename+the%0A++existing+memory+objects%2C+you+should+use+this+parameter.'/>
+                    <docPara content='This+map+and+%27customMemoryMap%27+should+not+be+used+together+because+this%0A++map+renames+the+default+memory%2C+but+then+%27customMemoryMap%27+replaces+the%0A++default+memory+objects.+The+parameters+%27codeMemory%27%2C+%27dataMemory%27+and%0A++%27stackMemory%27+are+not+automatically+reassigned+to+new+names.+It+is+the%0A++user%27s+responsibility+to+set+those+parameters+accordingly+to+%0A++%27renameMap%27.'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='sectMap' anchor='sect.Map' altext='custom.vlfft.evmc6670l.core0.Platform.sectMap' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='A+mapping+of+linker+output+section+names+to+memory+segments' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23sect.Map%22+title%3D%22xdc.platform.IPlatform.sectMap%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EsectMap%3C%2Fspan%3E%3C%2Fgo%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Platform.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EsectMap%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%5B%3Cspan+class%3D%22xdoc-kw1%22%3Estring%3C%2Fspan%3E%5D%3C%2Fi%3E+%3Cspan+class%3D%22xdoc-kw2%22%3Eundefined%3C%2Fspan%3E%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='During+the+generation+of+linker+command+files%2C+the+templates+used+to%0A++create+these+files+examine+several+sources+of+information+to+determine+%0A++the+placement+of+named+output+sections+into+memory+segments+defined%0A++by+the+platform.++The+default+placement%2C+described+below%2C%0A++uses+information+from+the+target+and+this+platform%27s%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23code.Memory%22+title%3D%22codeMemory%22%3EcodeMemory%3C%2Fa%3E%3C%2Ftt%3E%2C+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23data.Memory%22+title%3D%22dataMemory%22%3EdataMemory%3C%2Fa%3E%3C%2Ftt%3E%2C+and%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23stack.Memory%22+title%3D%22stackMemory%22%3EstackMemory%3C%2Fa%3E%3C%2Ftt%3E+configuration+parameters.'/>
+                    <docPara content='%3Ctt%3EsectMap%3C%2Ftt%3E+is+used+to+override+this+default+placement+of%0A++output+sections+%28%22.text%22%2C+%22.cinit%22%2C+etc.%29+to+a+memory+%0A++segment+defined+by+the+platform%27s+memory+map.++For+example%2C+even+if%0A++a+platform%27s+%3Ctt%3EcodeMemory%3C%2Ftt%3E+parameter+is+defined+to+be+%22SRAM%22+and%0A++%22.cinit%22+output+sections+are+%22code%22+sections%2C+if+the+platform+also%0A++defines+the+following+%3Ctt%3EsectMap%3C%2Ftt%3E%2C+the+section+%22.cinit%22+will+be+placed%0A++into+a+memory+segment+named+%22DDR2%22.'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E++++++sectMap%5B%5D+%3D+%5B%0A++++++++++%5B%22.cinit%22%2C+%22DDR2%22%5D%2C%0A++++++%5D%3B%0A%3C%2FPRE%3E'/>
+                </docSect>
+                <docSect name='Note'>
+                    <docPara content='If+an+output+section+has+an+entry+in%0A++%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%23sect.Map%22+title%3D%22xdc.cfg.Program.sectMap%22%3EProgram.sectMap%3C%2Fa%3E%3C%2Ftt%3E%2C+that+entry%0A++overrides+the+placement+specified+by+this+%3Ctt%3EsectMap%3C%2Ftt%3E.++A+program%27s%0A++%3Ctt%3EsectMap%3C%2Ftt%3E+configuration+always+overrides+the+platform%27s+%3Ctt%3EsectMap%3C%2Ftt%3E%0A++settings.'/>
+                </docSect>
+                <docSect name='Default Mapping'>
+                    <docPara content='The+default+placement+of+a+target%27s+output+sections+into+memory%0A++segments+defined+by+the+platform+is+determined+by+the+following%0A++configuration+parameters%3A'/>
+                    <docPara content='%3CUL%3E%3CLI%3E+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fbld%2FITarget.html%23sect.Map%22+title%3D%22xdc.bld.ITarget.sectMap%22%3EITarget.sectMap%3C%2Fa%3E%3C%2Ftt%3E%0A++++++++++used+to+map+a+named+output+section+to+either+%22code%22%2C+%22data%22%2C%0A++++++++++or+%22stack%22%0A%3C%2FLI%3E%3CLI%3E+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23code.Memory%22+title%3D%22codeMemory%22%3EcodeMemory%3C%2Fa%3E%3C%2Ftt%3E%0A++++++++++names+a+memory+segment+that+will+contain+all+%22code%22%0A++++++++++output+sections%0A%3C%2FLI%3E%3CLI%3E+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23data.Memory%22+title%3D%22dataMemory%22%3EdataMemory%3C%2Fa%3E%3C%2Ftt%3E%0A++++++++++names+a+memory+segment+that+will+contain+all+%22data%22%0A++++++++++output+sections%0A%3C%2FLI%3E%3CLI%3E+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23stack.Memory%22+title%3D%22stackMemory%22%3EstackMemory%3C%2Fa%3E%3C%2Ftt%3E%0A++++++++++names+a+memory+segment+that+will+contain+all+%22stack%22%0A++++++++++output+sections%0A%3C%2FLI%3E%3C%2FUL%3E'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%23sect.Map%22+title%3D%22xdc.cfg.Program.sectMap%22%3Exdc.cfg.Program.sectMap%3C%2Fa%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fbld%2FITarget.html%23sect.Map%22+title%3D%22xdc.bld.ITarget.sectMap%22%3Exdc.bld.ITarget.sectMap%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+            <decl kind='config' name='stackMemory' anchor='stack.Memory' altext='custom.vlfft.evmc6670l.core0.Platform.stackMemory' nodoc='0' external='1' overrides='1' readonly='0' instance='1' summary='The+default+segment+for+stack' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23stack.Memory%22+title%3D%22xdc.platform.IPlatform.stackMemory%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Eoverride+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-kw1%22%3Econfig%3C%2Fspan%3E+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EstackMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%2522L2SRAM%2522%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Platform.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EParams%3C%2Fspan%3E%3C%2Fgo%3E%3B'/>
+                    <line tab='0' content='%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                    <line tab='0' content='%3Cgo%3Eparams.%3Cspan+class%3D%22xdoc-id%22%3EstackMemory%3C%2Fspan%3E%3C%2Fgo%3E+%3D+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%2522L2SRAM%2522%3B'/>
+                </synopMeta>
+                <docSect name='details'>
+                    <docPara content='Each+target+has+a+section+map+with+keys+equal+to+the+names+of+all%0A++sections+that+compiler+and+assembler+for+that+target+generate.+The%0A++value+for+each+key+is+either+%22code%22+or+%22data%22+or+%22stack%22.+A+linker%0A++template+reads+that+map+and+puts+all+%22stack%22+sections+in+the+segment%0A++defined+by+this+configuration+parameter.'/>
+                </docSect>
+                <docSect name='see'>
+                    <docPara content='%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23data.Memory%22+title%3D%22dataMemory%22%3EdataMemory%3C%2Fa%3E%2C+%3Ca+class%3D%22xdoc-link%22+href%3D%22Platform.html%23code.Memory%22+title%3D%22codeMemory%22%3EcodeMemory%3C%2Fa%3E'/>
+                </docSect>
+            </decl>
+        </group>
+        <group name='per-instance creation'>
+            <synopSpec>
+                <line tab='0' comment='Create+an+instance-object' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecreate%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%26nbsp%3B%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+            </synopSpec>
+            <synopMeta>
+                <line elem='1'/>
+                <line tab='0' comment='Allocate+instance+config-params' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+params+%3D+%3Cspan+class%3D%22xdoc-kw1%22%3Enew%3C%2Fspan%3E+Platform.%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fcustom%2Fvlfft%2Fevmc6670l%2Fcore0%2FPlatform.html%23per-instance_config_parameters%22+title%3D%22custom.vlfft.evmc6670l.core0.Platform.Params%22%3EParams%3C%2Fa%3E%3B'/>
+                <line tab='0' comment='Assign+individual+configs' content='params.%3Ci%3Econfig%3C%2Fi%3E+%3D+%3Cb%3E%26nbsp%3B%26nbsp%3B...%3C%2Fb%3E'/>
+                <line blank='1' always='0'/>
+                <line elem='0'/>
+                <line tab='0' comment='Create+an+instance-object' content='%3Cspan+class%3D%22xdoc-kw1%22%3Evar%3C%2Fspan%3E+inst+%3D+Platform.%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ecreate%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EString%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Ename%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eargs%3C%2Fspan%3E%3C%2Fgo%3E%2C+params+%29%3B'/>
+            </synopMeta>
+            <docSect name='ARGUMENTS'>
+                <docChild name='name' summary='the+name+of+the+platform+instance+being+created'>
+                    <docPara content='This+name+is+the+suffix+of+the+platform%0A%09%09%09specification+supplied+in+the+build+script+after%0A%09%09%09the+platform+name+%28and+optional+%27%3A%27%29+prefix+has%0A%09%09++++++++been+removed.++So+the+platform+instance+name%0A%09%09%09%22joes.platform.foo%3Abar%22+results+in+the+name+%22bar%22%0A%09%09%09and+the+name+%22joes.platform.foo%22+result+in+the+name%0A%09%09%09%22%22.'/>
+                </docChild>
+                <docChild name='args' summary='deprecated+parameter+that+should+not+be+used+in%0A%09%09%09a+platform+instance+implementation'>
+                </docChild>
+            </docSect>
+        </group>
+        <group name='per-instance functions'>
+            <decl spacer='1'/>
+            <decl kind='fxn' name='getCpuDataSheet' anchor='get.Cpu.Data.Sheet' altext='custom.vlfft.evmc6670l.core0.Platform.getCpuDataSheet' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Get+the+Cpu+data+sheet+object+corresponding+to+specified+cpu+id' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23get.Cpu.Data.Sheet%22+title%3D%22xdc.platform.IPlatform.getCpuDataSheet%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EgetCpuDataSheet%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcpuId%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3EgetCpuDataSheet%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EcpuId%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='cpuId' summary='a+string+that+corresponds+to+the+platform-specific+id%0A++++++++++++++++++of+a+CPU+on+this+platform+that+runs+executables.'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+function+executes+in+either+the+Configuration+object+model%0A++or+the+Build+object+model.'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='Returns+an+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FICpuDataSheet.html%22+title%3D%22xdc.platform.ICpuDataSheet%22%3Exdc.platform.ICpuDataSheet%3C%2Fa%3E%3C%2Ftt%3E%0A++++++++++++++++++instance+object+that+corresponds+to+the+specified%0A++++++++++++++++++cpuId.'/>
+                </docSect>
+                <docSect name='throws'>
+                    <docPara content='%3Ctt%3EError%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getCreateArgs' anchor='get.Create.Args' altext='custom.vlfft.evmc6670l.core0.Platform.getCreateArgs' nodoc='1' external='1' overrides='0' readonly='0' instance='1' summary='DEPRECATED' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23get.Create.Args%22+title%3D%22xdc.platform.IPlatform.getCreateArgs%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EgetCreateArgs%3C%2Fspan%3E%3C%2Fgo%3E%28++%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3EgetCreateArgs%3C%2Fspan%3E%3C%2Fgo%3E%28++%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+            </decl>
+            <decl kind='fxn' name='getExeContext' anchor='get.Exe.Context' altext='custom.vlfft.evmc6670l.core0.Platform.getExeContext' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Get+execution+context+object+corresponding+to+the+specified+program' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23get.Exe.Context%22+title%3D%22xdc.platform.IPlatform.getExeContext%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EgetExeContext%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3EgetExeContext%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='prog' summary='the+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E+object+representing+the%0A++++++++++++++++++program+being+configured.'>
+                        <docPara content='This+object+contains+the+following+properties+that%0A%09%09%09allows+the+platform+to+determine+the+appropriate+Cpu%0A%09%09%09object+to+return+%28if+there+is+more+than+one%29%3A%0A%09%09%09++++%3Ctt%3Eprog.build.cpuId%3C%2Ftt%3E%2C%0A%09%09%09++++%3Ctt%3Eprog.build.cpuArgs%3C%2Ftt%3E%2C+%0A%09%09%09++++%3Ctt%3Eprog.build.target%3C%2Ftt%3E%2C'/>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+is+called+before+the+program%27s+configuration+script+runs+to+%0A++get+the+Cpu+object+that+is+assigned+to+the+program%27s+cpu+field.'/>
+                    <docPara content='Note%3A+that+the+build+script+for+the+program+is+responsible+for%0A++specifying+the+CPU%3B+this+is+done+by+either+implicitly+naming+the%0A++platform+or+explicitly+naming+a+particular+CPU+on+the+platform%0A++%28see+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fbld%2FExecutable.html%23.Attrs%22+title%3D%22xdc.bld.Executable.Attrs%22%3Exdc.bld.Executable.Attrs.cpuId%3C%2Fa%3E%3C%2Ftt%3E%29.'/>
+                    <docPara content='This+function+executes+in+the+Configuration+object+model.'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='Returns+an+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIExeContext.html%22+title%3D%22xdc.platform.IExeContext%22%3Exdc.platform.IExeContext%3C%2Fa%3E%3C%2Ftt%3E+instance%0A++++++++++++++++++object+that+corresponds+to+the+CPU+that+will+run+the%0A++++++++++++++++++specified+program.'/>
+                </docSect>
+                <docSect name='throws'>
+                    <docPara content='%3Ctt%3EError%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getExecCmd' anchor='get.Exec.Cmd' altext='custom.vlfft.evmc6670l.core0.Platform.getExecCmd' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Get+the+exec+command+used+to+run+the+program+on+this+platform' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23get.Exec.Cmd%22+title%3D%22xdc.platform.IPlatform.getExecCmd%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EgetExecCmd%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EplatPath%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3EgetExecCmd%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E%2C+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3EplatPath%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='prog' summary='the+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E+object+representing+the%0A++++++++++++++++++program+being+configured.'>
+                        <docPara content='This+object+contains+the+following+properties+that%0A%09%09%09allows+the+platform+to+determine+the+appropriate+Cpu%0A%09%09%09object+to+return+%28if+there+is+more+than+one%29%3A%0A%09%09%09++++%3Ctt%3Eprog.build.cpuId%3C%2Ftt%3E%2C%0A%09%09%09++++%3Ctt%3Eprog.build.cpuArgs%3C%2Ftt%3E%2C%0A%09%09%09++++%3Ctt%3Eprog.build.target%3C%2Ftt%3E'/>
+                    </docChild>
+                    <docChild name='platPath' summary='full+path+to+the+platform+package+for+the+program'>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='This+function+is+called+after+the+program%27s+configuration+script+runs%0A++and+returns+commands+that+are+used+to+load+and+run+the+specified%0A++program.++These+commands+are+placed+in+a+makefile+that+is+included%0A++by+the+client+package%27s+generated+makefile.++Thus%2C+the+commands+may%0A++refer+to+macros+defined+in+this+environment%3B+e.g.%2C+%3Ctt%3E%24%28SHELL%29%3C%2Ftt%3E+and%0A++%3Ctt%3E%24%28XDCROOT%29%3C%2Ftt%3E%2C+etc.'/>
+                    <docPara content='The+special+macro+%3Ctt%3E%24%281%29%3C%2Ftt%3E+expands+to+test-specific+arguments%0A++%28%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fbld%2FTest.html%23attrs%22+title%3D%22xdc.bld.Test.attrs%22%3Exdc.bld.Test.attrs.execArgs%3C%2Fa%3E%3C%2Ftt%3E%29+that+are+passed+from+the+test%0A++to+the+platform%27s+exec+command.++Thus%2C+all+platforms+that+support%0A++arguments+to+their+exec+command%2C+should+embed+%22%3Ctt%3E%24%281%29%3C%2Ftt%3E%22+within+the%0A++command+string+at+the+appropriate+place+to+have+these+arguments%0A++interpreted+the+exec+command.'/>
+                    <docPara content='For+example%2C+a+platform+that+uses+a+shell+script+to+run+executables%0A++and+allows+options+to+be+passed+to+the+shell+script+might+return%0A++the+following+string%3A'/>
+                    <docPara content='%3CPRE+class%3D%22Example%22%3E%09++++%22%24%28SHELL%29+%26lt%3Bexec_path%26gt%3B+%24%281%29+%26lt%3Bexe_name%26gt%3B%22%0A%3C%2FPRE%3E'/>
+                    <docPara content='where%2C+%3Ctt%3E%26lt%3Bexec_path%26gt%3B%3C%2Ftt%3E+is+the+absolute+path+to+the+platform%27s+exec%0A++shell+script%2C+and+%3Ctt%3E%26lt%3Bprog_name%26gt%3B%3C%2Ftt%3E+is+the+name+of+the+executable+relative%0A++to+the+package%27s+base+directory+%28i.e.%2C+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%23name%22+title%3D%22xdc.cfg.Program.name%22%3Exdc.cfg.Program.name%3C%2Fa%3E%3C%2Ftt%3E%29.'/>
+                    <docPara content='This+function+executes+in+the+Configuration+object+model.'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='Returns+a+string+of+commands+used+to+execute+this%0A++++++++++++++++++program+in+the+context+of+the+XDC+generated+makefiles.'/>
+                </docSect>
+                <docSect name='throws'>
+                    <docPara content='%3Ctt%3EError%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.'/>
+                </docSect>
+            </decl>
+            <decl kind='fxn' name='getLinkTemplate' anchor='get.Link.Template' altext='custom.vlfft.evmc6670l.core0.Platform.getLinkTemplate' nodoc='0' external='1' overrides='0' readonly='0' instance='1' summary='Get+Linker+Command+file+template+used+to+link+an+executable' origin='%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fplatform%2FIPlatform.html%23get.Link.Template%22+title%3D%22xdc.platform.IPlatform.getLinkTemplate%22%3EIPlatform%3C%2Fa%3E'>
+                <synopSpec>
+                    <line tab='0' content='%3Cgo%3E%3Cspan+class%3D%22xdoc-kw1%22%3Efunction+%3C%2Fspan%3E%3Cspan+class%3D%22xdoc-id%22%3EgetLinkTemplate%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E+%29%3B'/>
+                </synopSpec>
+                <synopMeta>
+                    <line tab='0' content='%3Cgo%3Einst.%3Cspan+class%3D%22xdoc-id%22%3EgetLinkTemplate%3C%2Fspan%3E%3C%2Fgo%3E%28+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E+%3Cgo%3E%3Cspan+class%3D%22xdoc-id%22%3Eprog%3C%2Fspan%3E%3C%2Fgo%3E+%29+%3Ci%3Ereturns%3C%2Fi%3E+%3Ci%3E%3Cspan+class%3D%22xdoc-kw2%22%3EAny%3C%2Fspan%3E%3C%2Fi%3E'/>
+                </synopMeta>
+                <docSect name='ARGUMENTS'>
+                    <docChild name='prog' summary='the+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%22+title%3D%22xdc.cfg.Program%22%3Exdc.cfg.Program%3C%2Fa%3E%3C%2Ftt%3E+object+representing+the%0A++++++++++++++++++program%09being+configured.'>
+                        <docPara content='This+object+contains+the+following+properties+that%0A%09%09%09allows+the+platform+to+determine+the+appropriate+link%0A%09%09%09template+to+return%3A'/>
+                        <docPara content='%3CUL%3E%3CLI%3E+%3Ctt%3Eprog.build.cpuId%3C%2Ftt%3E%2C%0A%3C%2FLI%3E%3CLI%3E+%3Ctt%3Eprog.build.cpuArgs%3C%2Ftt%3E%2C%0A%3C%2FLI%3E%3CLI%3E+%3Ctt%3Eprog.build.target%3C%2Ftt%3E%0A%3C%2FLI%3E%3C%2FUL%3E'/>
+                    </docChild>
+                </docSect>
+                <docSect name='details'>
+                    <docPara content='In+the+event+that+no+template+is+provided+by+the+program%0A++configuration+script+%28see+%3Ctt%3E%3Ca+class%3D%22xdoc-link%22+href%3D%22..%2F..%2F..%2F..%2Fxdc%2Fcfg%2FProgram.html%23link.Template%22+title%3D%22xdc.cfg.Program.linkTemplate%22%3Exdc.cfg.Program.linkTemplate%3C%2Fa%3E%3C%2Ftt%3E%29%2C+%0A++the+template+file+identified+by+this+method+is+used+to+generate+the%0A++linker+command+file+used+to+create+the+executable.'/>
+                    <docPara content='This+function+executes+in+the+Configuration+object+model+and%0A++is+called+after+the+program+configuration+script+runs.++The+template%0A++is+expanded+in+the+context+of+the+Configuration+Object+Model.'/>
+                </docSect>
+                <docSect name='returns'>
+                    <docPara content='Returns+a+path+string+to+a+template+file+or+%3Ctt%3Enull%3C%2Ftt%3E.++If%0A%09%09%09%3Ctt%3Enull%3C%2Ftt%3E%2C+no+linker+command+file+is+generated%3B+otherwise%0A%09%09%09this+path+is+relative+to+the+package+path.'/>
+                </docSect>
+                <docSect name='throws'>
+                    <docPara content='%3Ctt%3EError%3C%2Ftt%3E+exceptions+are+thrown+for+fatal+errors.'/>
+                </docSect>
+            </decl>
+        </group>
+    </unit>
+</package>

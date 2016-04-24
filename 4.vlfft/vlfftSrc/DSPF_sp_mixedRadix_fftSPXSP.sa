@@ -1,0 +1,479 @@
+* ======================================================================= *
+* DSPF_sp_mixedRadix_fftSPxSP.sa -- Forward FFT with Mixed Radix          *
+*                 Linear ASM Implementation                               *
+*                                                                         *
+* Rev 0.0.2                                                               *
+*                                                                         *
+* ----------------------------------------------------------------------- *
+*            Copyright (c) 2010 Texas Instruments, Incorporated.          *
+*                           All Rights Reserved.                          *
+* ======================================================================= *
+
+                .sect ".text"
+
+        .global DSPF_sp_mixedRadix_fftSPxSP
+
+
+DSPF_sp_mixedRadix_fftSPxSP .cproc  A_n, B_ptr_x, A_ptr_w, B_ptr_y
+
+          .no_mdep
+
+          .reg      B_w0
+          .reg      A_j, A_w, A_x, A_y, A_h2, A_2h2, A_h22, A_fft_jmp, A_predj, B_fft_jmp_1
+          .reg      B_j, B_w, B_x, B_y, B_h2, B_2h2, B_h22, B_fft_jmp, B_predj, B_n
+
+          .reg      A_co1:A_si1, A_co2:A_si2, A_co3:A_si3
+          .reg      B_co1:B_si1, B_co2:B_si2, B_co3:B_si3
+
+          .reg      A_x1,A_x0, A_x_h2p,A_x_h2, A_x_l1p,A_x_l1, A_x_l2p,A_x_l2
+          .reg      A_xh1:A_xh0, A_xl0,A_xl1, A_xh20,A_xh21,A_xl20,A_xl21
+
+          .reg      B_x1,B_x0, B_x_h2p,B_x_h2, B_x_l1p,B_x_l1, B_x_l2p,B_x_l2
+          .reg      B_xh1:B_xh0, B_xl0,B_xl1, B_xh20,B_xh21,B_xl20,B_xl21
+
+          .reg      A_sum1, A_sum2
+          .reg      A_sum3, A_sum4, A_xt1, A_yt1
+          .reg      A_prod1,A_prod2,A_prod3,A_prod4
+
+          .reg      A_sum6:A_sum5
+          .reg      A_yt0:A_xt0
+          .reg      A_prod8:A_prod7,A_prod6:A_prod5
+
+          .reg      A_sum7, A_sum8, A_xt2, A_yt2
+          .reg      A_prod9,A_prod10,A_prod11,A_prod12
+          .reg      B_sum1, B_sum2
+          .reg      B_sum3, B_sum4,  B_xt1,   B_yt1
+          .reg      B_prod1,B_prod2, B_prod3, B_prod4
+
+          .reg      B_sum6:B_sum5
+          .reg      B_yt0:B_xt0
+          .reg      B_prod8:B_prod7,B_prod6:B_prod5
+
+          .reg      B_sum7, B_sum8,  B_xt2,   B_yt2
+          .reg      B_prod9,B_prod10,B_prod11,B_prod12
+
+          .reg      A_radix,  A_i 
+          .reg      B_radix2, B_stride, B_tw_offset, B_i, B_while, B_temp
+          .reg      A_tw_offset, A_r2, A_j0, A_k0, A_temp1, A_k, A_l0
+          .reg      B_brev, B_l0, B_j1, B_k1, B_k
+
+          .reg      A_p_x0, A_p_y0, A_p_y, A_outjmp
+          .reg      B_p_x0, B_p_y0, B_p_y, B_outjmp
+
+          .reg      B_x2, B_x3, B_x6, B_x7, B_yt3, B_yt5, B_yt7
+          .reg      A_x4, A_x5,                    A_yt4, A_yt6
+          .reg      A_xh0_0, A_xh1_0, A_xl0_0, A_xl1_0
+          .reg      B_xl0_1, B_xl1_1, B_xh0_1, B_xh1_1
+          .reg      A_x0c, A_x1c
+          .reg      B_x2c, B_x3c
+
+          .reg      B_const6, A_const48, A_const16
+          .reg      A_y_, B_y_
+
+
+       .reg     B_lradix, B_lbrev, B_ll0, A_ll0, B_lflag
+       .reg     A_lj, A_lj0, A_lj1, A_lk, A_lk0, A_lk1, A_ltemp1
+       .reg     B_lj, B_lj0, B_lj1, B_lk, B_lk0, B_lk1, B_ltemp1
+
+       .reg     A_ptr_lx0,  B_ptr_lx0
+       .reg     A_ptr_lx1,  B_ptr_lx1
+       .reg     A_ly0, A_ly1, B_ly0, B_ly1
+       .reg     A_lr2flag,  B_lr2flag
+       .reg     A_lnmax,    B_lnmax
+       .reg     A_lctr
+
+       .reg     A_lx1:A_lx0
+       .reg     A_lx3:A_lx2
+       .reg     A_lx5:A_lx4
+       .reg     A_lx7:A_lx6
+
+       .reg     B_lx3_:B_lx2_
+       .reg     B_lx7_:B_lx6_
+
+       .reg     B_lx1:B_lx0
+       .reg     B_lx3:B_lx2
+       .reg     B_lx5:B_lx4
+       .reg     B_lx7:B_lx6
+
+       .reg     A_lx1_:A_lx0_
+       .reg     A_lx5_:A_lx4_
+
+       .reg     A_lxh0_0, A_lxh1_0, A_lxh0_1, A_lxh1_1
+       .reg     B_lxh0_0, B_lxh1_0, B_lxh0_1, B_lxh1_1
+
+       .reg     A_lyt0, A_lyt1, A_lyt4, A_lyt5
+       .reg     B_lyt0, B_lyt1, B_lyt4, B_lyt5
+
+       .reg     A_lxl0_0, A_lxl1_0, A_lxl0_1, A_lxl1_1
+       .reg     B_lxl0_0, B_lxl1_0, B_lxl0_1, B_lxl1_1
+
+       .reg     A_lyt2, A_lyt3, A_lyt6, A_lyt7
+       .reg     B_lyt2, B_lyt3, B_lyt6, B_lyt7
+       .reg     B_temp1, A_r2flag
+
+
+
+
+          MVK  .1   4,           A_radix                    
+          MV   .2   A_n,         B_n
+
+          MV   .2                B_n,          B_stride                 
+          ZERO .2                B_tw_offset                            
+
+          MVK.2     6,           B_const6
+          MVK.1     48,          A_const48
+          MVK.1     16,          A_const16
+
+
+OLOOP
+          ZERO .1   A_j
+          ZERO .2   B_j
+          MPY32.2   B_const6,     B_stride,    B_fft_jmp
+
+          SHRU .2   B_stride,     2,           B_h2
+          MV   .1   B_h2,         A_h2
+
+          ADD  .1   B_ptr_x,      -16,         A_x
+          ADD  .1   B_ptr_x,      -16,         A_y
+
+
+          ADD  .2   A_ptr_w,      B_tw_offset, B_w0
+          ADD  .2   B_tw_offset,  B_fft_jmp,   B_tw_offset
+
+
+          SHRU .2   B_stride,     2,           B_stride   
+
+          SHRU .2   B_n,          3,           B_i        
+          SUB  .2   B_i,          1,           B_i
+
+ILOOP: .trip 8
+          ADD.2     B_w0,         B_j,         B_w
+          MVD  .1   B_w,          A_w
+
+          
+          LDDW .1   *A_w[0],      A_co1:A_si1             ;Load si1, co1
+          LDDW .1   *A_w[1],      A_co2:A_si2             ;Load si2, co2
+          LDDW .1   *A_w[2],      A_co3:A_si3             ;Load si3, co3
+          LDDW .2   *B_w[3],      B_co1:B_si1             ;Load si1, co1
+          LDDW .2   *B_w[4],      B_co2:B_si2             ;Load si2, co2
+          LDDW .2   *B_w[5],      B_co3:B_si3             ;Load si3, co3
+
+          MVD  .2   A_x,          B_x                     ;x_copy =x
+          LDDW .1   *++A_x[2],    A_x1:A_x0               ;Load x1, x0
+          LDDW .1   *++A_x[A_h2], A_x_h2p:A_x_h2          ;Load x_h2p, x_h2  
+          LDDW .1   *++A_x[A_h2], A_x_l1p:A_x_l1          ;Load x_l1p, x_l1  
+          LDDW .1   *A_x[A_h2],   A_x_l2p:A_x_l2          ;Load x_l2p, x_l2          
+
+          LDDW .2   *++B_x[3],    B_x1:B_x0               ;Load x1, x0  
+          LDDW .2   *++B_x[B_h2], B_x_h2p:B_x_h2          ;Load x_h2p, x_h2  
+          LDDW .2   *++B_x[B_h2], B_x_l1p:B_x_l1          ;Load x_l1p, x_l1  
+          LDDW .2   *B_x[B_h2],   B_x_l2p:B_x_l2          ;Load x_l2p, x_l2
+
+
+          DADDSP.L1 A_x1:A_x0,    A_x_l1p:A_x_l1, A_xh1:A_xh0
+          DSUBSP .1 A_x1:A_x0,    A_x_l1p:A_x_l1,   A_xl1:A_xl0
+          DADDSP.1  A_x_h2p:A_x_h2, A_x_l2p:A_x_l2,  A_xh21:A_xh20
+          DSUBSP .1 A_x_h2p:A_x_h2, A_x_l2p:A_x_l2, A_xl21:A_xl20
+
+
+
+
+          DADDSP.L2 B_x1:B_x0, B_x_l1p:B_x_l1, B_xh1:B_xh0
+          DSUBSP.2  B_x1:B_x0,    B_x_l1p:B_x_l1, B_xl1:B_xl0
+          DADDSP.2  B_x_h2p:B_x_h2, B_x_l2p:B_x_l2, B_xh21:B_xh20
+          DSUBSP .2 B_x_h2p:B_x_h2, B_x_l2p:B_x_l2, B_xl21:B_xl20
+
+          ROTL.2    B_h2,  4,     B_2h2
+          SUB.1     A_x,          B_2h2,       A_x
+
+          ADD   .1  A_j,          A_const48,   A_j        ;j += 6
+          SUB   .1  A_j,          B_fft_jmp,   A_predj    ;predj = j - fft_jmp
+[!A_predj]ADD   .1  A_x,          B_fft_jmp,   A_x        ;*x = *x + fft_jmp
+[!A_predj]ZERO  .1  A_j                                   ;j=0
+
+          MVD   .1  A_y,          A_y_
+          MVD   .2  A_y,          B_y_
+
+          DADDSP.1  A_xh1:A_xh0,  A_xh21:A_xh20, A_sum2:A_sum1
+          STDW  .1  A_sum2:A_sum1,*++A_y_[2]
+
+
+
+          DSUBSP.1  A_xh1:A_xh0,  A_xh21:A_xh20, A_yt0:A_xt0
+          CMPYSP.1  A_yt0:A_xt0,  A_co2:A_si2, A_prod8:A_prod7:A_prod6:A_prod5
+          DADDSP.1  A_prod8:A_prod7, A_prod6:A_prod5, A_sum6:A_sum5
+          STDW  .1  A_sum6:A_sum5,*++A_y_[A_h2]
+
+
+
+          SUBSP .L1 A_xl0,        A_xl21,     A_xt1       ;xt1 = xl0 + xl21
+          ADDSP .L1 A_xl1,        A_xl20,     A_yt1       ;yt1 = xl1 - xl20
+          CMPYSP.1  A_yt1:A_xt1,  A_co1:A_si1, A_prod4:A_prod3:A_prod2:A_prod1
+          DADDSP.1  A_prod4:A_prod3, A_prod2:A_prod1, A_sum4:A_sum3
+          STDW  .1  A_sum4:A_sum3,*++A_y_[A_h2]
+
+
+
+          ADDSP .L1 A_xl0,        A_xl21,     A_xt2       ;xt2 = xl0 + xl21
+          SUBSP .L1 A_xl1,        A_xl20,     A_yt2       ;yt2 = xl1 - xl20
+          CMPYSP.1  A_yt2:A_xt2,  A_co3:A_si3, A_prod12:A_prod11:A_prod10:A_prod9
+          DADDSP.1  A_prod12:A_prod11, A_prod10:A_prod9, A_sum8:A_sum7
+          STDW  .1  A_sum8:A_sum7,*A_y_[A_h2]
+
+
+
+
+          DADDSP.2  B_xh1:B_xh0,  B_xh21:B_xh20, B_sum2:B_sum1
+          STDW  .2  B_sum2:B_sum1,*++B_y_[3]
+
+
+
+          DSUBSP.2  B_xh1:B_xh0,  B_xh21:B_xh20, B_yt0:B_xt0
+          CMPYSP.2  B_yt0:B_xt0,  B_co2:B_si2, B_prod8:B_prod7:B_prod6:B_prod5
+          DADDSP.2  B_prod8:B_prod7, B_prod6:B_prod5, B_sum6:B_sum5
+          STDW  .2  B_sum6:B_sum5,*++B_y_[B_h2]
+
+
+
+          SUBSP .L2 B_xl0,        B_xl21,     B_xt1       ;xt1 = xl0 - xl21
+          ADDSP .L2 B_xl1,        B_xl20,     B_yt1       ;yt1 = xl1 + xl20
+          CMPYSP.2  B_yt1:B_xt1,  B_co1:B_si1, B_prod4:B_prod3:B_prod2:B_prod1
+          DADDSP.2  B_prod4:B_prod3, B_prod2:B_prod1, B_sum4:B_sum3
+          STDW  .2  B_sum4:B_sum3,*++B_y_[B_h2]
+
+
+
+          ADDSP .L2 B_xl0,        B_xl21,     B_xt2       ;xt2 = xl0 - xl21
+          SUBSP .L2 B_xl1,        B_xl20,     B_yt2       ;yt2 = xl1 + xl20
+          CMPYSP.2  B_yt2:B_xt2,  B_co3:B_si3, B_prod12:B_prod11:B_prod10:B_prod9
+          DADDSP.2  B_prod12:B_prod11, B_prod10:B_prod9, B_sum8:B_sum7
+          STDW  .2  B_sum8:B_sum7,*B_y_[B_h2]
+
+          ADD   .1  A_y,          A_const16,  A_y
+
+          ADD   .2  B_j,          A_const48,  B_j   
+          SUB   .2  B_j,          B_fft_jmp,  B_predj             
+[!B_predj]ADD   .1  A_y,          B_fft_jmp,  A_y 
+[!B_predj]ZERO  .2  B_j                              
+
+
+     [B_i]BDEC  .2  ILOOP,        B_i 
+ 
+        CMPGTU.2  B_stride,     A_radix,    B_while
+[B_while]B     .2  OLOOP                 
+
+
+       ; find the radix of the fft
+       MVK  .1   4,           A_radix                    
+       NORM .2   A_n,         B_radix2                 
+       AND  .2   B_radix2, 1, B_radix2
+[B_radix2]MVK  .1   2,        A_radix                 
+
+       ZERO.1   A_lj                                
+       shr.2    A_n,         3,          B_lj
+
+       MV.1     B_ptr_x,     A_ptr_lx0               ;ptr_x0 = ptr_x
+       ADD.2    B_ptr_x,     8,          B_ptr_lx0
+
+       mv.1     A_n,         A_ptr_lx1
+       addaw.1  B_ptr_x,     A_ptr_lx1,  A_ptr_lx1
+       add.2    A_ptr_lx1,   8,          B_ptr_lx1
+
+       MV.1     B_ptr_y,     A_ly0                   ;y0 = ptr_y
+       MV.2     B_ptr_y,     B_ly0                   ;y0 = ptr_y
+ 
+       ;get size of fft -> l0 = _norm(n_max) - 17
+       NORM.1   A_n,         A_ll0                   ;l0 =_NORM(n_max)
+        ADD.1   A_ll0,       3,          A_ll0       ;l0 += 3
+         MV.2   A_ll0,       B_ll0
+
+       SHR.2    A_n,         2,          B_lnmax     ;nmax >>= 2
+       SHR.1    A_n,         2,          A_lnmax     ;nmax >>= 2
+
+       SHR.1    A_n,         3,          A_lctr      ;set loop Counter
+       SUB.1    A_lctr,      1,          A_lctr
+
+     CMPEQ.1    A_radix,     2,          A_r2flag    ;Check whether radix ==2
+
+[A_r2flag]B     LAST_STAGE_RADIX2 
+
+
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+       ; last stage of radix4 computation ;
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+       ;Bit reversal Caliculation
+LOOP4:    .trip   4
+
+          BITR.1  A_lj,        A_ltemp1
+          SHRU.1  A_ltemp1,    A_ll0,         A_lk
+           SHL.1  A_lk,  2,    A_lk
+           ADD.1  A_ly0,       A_lk,          A_ly1      ;*y1 = *y0 + k 
+
+           ADD.1  A_lj,        1,            A_lj       ;j = j+1
+
+
+
+          BITR.2  B_lj,        B_ltemp1
+          SHRU.2  B_ltemp1,    B_ll0,         B_lk
+           SHL.2  B_lk,  2,    B_lk
+           ADD.2  B_ly0,       B_lk,          B_ly1      ;*y1 = *y0 + k 
+
+           ADD.2  B_lj,        1,            B_lj       ;j = j+1
+
+
+          LDDW.1 *A_ptr_lx0++[2],A_lx1:A_lx0                  ;load ptr_x0[0], ptr_x0[1] 
+          LDDW.2 *B_ptr_lx0++[2],A_lx3:A_lx2                  ;load ptr_x0[2], ptr_x0[3]  
+          LDDW.1 *A_ptr_lx0++[2],A_lx5:A_lx4                  ;load ptr_x0[4], ptr_x0[5] 
+          LDDW.2 *B_ptr_lx0++[2],A_lx7:A_lx6                  ;load ptr_x0[4], ptr_x0[5] 
+
+          LDDW.1 *A_ptr_lx1++[2],B_lx1:B_lx0                  ;load ptr_x0[0], ptr_x0[1] 
+          LDDW.2 *B_ptr_lx1++[2],B_lx3:B_lx2                  ;load ptr_x0[2], ptr_x0[3]  
+          LDDW.1 *A_ptr_lx1++[2],B_lx5:B_lx4                  ;load ptr_x0[4], ptr_x0[5] 
+          LDDW.2 *B_ptr_lx1++[2],B_lx7:B_lx6                  ;load ptr_x0[4], ptr_x0[5] 
+
+
+        DADDSP.1 A_lx1:A_lx0, A_lx5:A_lx4,    A_lxh1_0:A_lxh0_0        ;xh0_0 = x0 + x4, xh1_0 = x1 + x5
+        DADDSP.1 A_lx3:A_lx2, A_lx7:A_lx6,    A_lxh1_1:A_lxh0_1        ;xh0_1 = x2 + x6, xh1_1 = x3 + x7
+ 
+        DADDSP.2 B_lx1:B_lx0, B_lx5:B_lx4,    B_lxh1_0:B_lxh0_0         ;xh0_0 = x0 + x4, xh1_0 = x1 + x5
+        DADDSP.2 B_lx3:B_lx2, B_lx7:B_lx6,    B_lxh1_1:B_lxh0_1         ;xh0_1 = x2 + x6, xh1_1 = x3 + x7
+ 
+        DADDSP.1 A_lxh1_0:A_lxh0_0, A_lxh1_1:A_lxh0_1, A_lyt1:A_lyt0    ;yt0 =xh0_0 + xh0_1; yt1 =xh1_0 + xh1_1
+        DSUBSP.1 A_lxh1_0:A_lxh0_0, A_lxh1_1:A_lxh0_1, A_lyt5:A_lyt4    ;yt4 =xh0_0 - xh0_1, yt5 =xh1_0 - xh1_1
+
+        DADDSP.2 B_lxh1_0:B_lxh0_0, B_lxh1_1:B_lxh0_1, B_lyt1:B_lyt0    ;yt0 =xh0_0 + xh0_1, yt1 =xh1_0 + xh1_1
+        DSUBSP.2 B_lxh1_0:B_lxh0_0, B_lxh1_1:B_lxh0_1, B_lyt5:B_lyt4    ;yt4 =xh0_0 - xh0_1, yt5 =xh1_0 - xh1_1
+
+
+        DSUBSP.1 A_lx1:A_lx0, A_lx5:A_lx4, A_lxl1_0:A_lxl0_0            ;xl0_0 = x0 - x4, xl1_0 = x1 - x5
+        DSUBSP.1 A_lx3:A_lx2, A_lx7:A_lx6, A_lxl1_1:A_lxl0_1            ;xl0_1 = x2 - x6, xl1_1 = x3 - x7, 
+
+        DSUBSP.2 B_lx1:B_lx0, B_lx5:B_lx4, B_lxl1_0:B_lxl0_0            ;xl0_0 = x0 - x4, xl1_0 = x1 - x5
+        DSUBSP.2 B_lx3:B_lx2, B_lx7:B_lx6, B_lxl1_1:B_lxl0_1            ;xl0_1 = x2 - x6, xl1_1 = x3 - x7
+
+
+         SUBSP.1 A_lxl0_0,    A_lxl1_1,        A_lyt2       ;yt2 = xl0_0 + xl1_1 
+         ADDSP.1 A_lxl1_0,    A_lxl0_1,        A_lyt3       ;yt3 = xl1_0 - xl0_1 
+         ADDSP.1 A_lxl0_0,    A_lxl1_1,        A_lyt6       ;yt6 = xl0_0 - xl1_1   
+         SUBSP.1 A_lxl1_0,    A_lxl0_1,        A_lyt7       ;yt7 = xl1_0 + xl0_1
+ 
+         SUBSP.2 B_lxl0_0,    B_lxl1_1,        B_lyt2       ;yt2 = xl0_0 + xl1_1 
+         ADDSP.2 B_lxl1_0,    B_lxl0_1,        B_lyt3       ;yt3 = xl1_0 - xl0_1 
+         ADDSP.2 B_lxl0_0,    B_lxl1_1,        B_lyt6       ;yt6 = xl0_0 - xl1_1   
+         SUBSP.2 B_lxl1_0,    B_lxl0_1,        B_lyt7       ;yt7 = xl1_0 + xl0_1 
+
+
+          STDW.1  A_lyt1:A_lyt0,    *A_ly1++[A_lnmax]
+          STDW.1  A_lyt3:A_lyt2,    *A_ly1++[A_lnmax]
+          STDW.1  A_lyt5:A_lyt4,    *A_ly1++[A_lnmax]
+          STDW.1  A_lyt7:A_lyt6,    *A_ly1
+
+
+          STDW.2  B_lyt1:B_lyt0,    *B_ly1++[B_lnmax]
+          STDW.2  B_lyt3:B_lyt2,    *B_ly1++[B_lnmax]
+          STDW.2  B_lyt5:B_lyt4,    *B_ly1++[B_lnmax]
+          STDW.2  B_lyt7:B_lyt6,    *B_ly1
+
+[A_lctr]BDEC.1  LOOP4,       A_lctr
+
+        B       ENDFUNCTION
+
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+       ; last stage of radix2 computation;
+       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+LAST_STAGE_RADIX2:
+LOOP2:    .trip   4
+
+       ;Bit reversal Caliculation
+          BITR.1  A_lj,        A_ltemp1
+          SHRU.1  A_ltemp1,    A_ll0,         A_lk
+           SHL.1  A_lk,  2,    A_lk
+           ADD.1  A_ly0,       A_lk,          A_ly1      ;*y1 = *y0 + k 
+
+           ADD.1  A_lj,        1,            A_lj       ;j = j+1
+
+          BITR.2  B_lj,        B_ltemp1
+          SHRU.2  B_ltemp1,    B_ll0,         B_lk
+           SHL.2  B_lk,  2,    B_lk
+           ADD.2  B_ly0,       B_lk,          B_ly1      ;*y1 = *y0 + k 
+
+           ADD.2  B_lj,        1,            B_lj       ;j = j+1
+       
+       LDDW.1 *A_ptr_lx0++[2],A_lx1:A_lx0                  ;load ptr_x0[0], ptr_x0[1] 
+       LDDW.2 *B_ptr_lx0++[2],A_lx3:A_lx2                  ;load ptr_x0[2], ptr_x0[3]  
+       LDDW.1 *A_ptr_lx0++[2],A_lx5:A_lx4                  ;load ptr_x0[4], ptr_x0[5] 
+       LDDW.2 *B_ptr_lx0++[2],A_lx7:A_lx6                  ;load ptr_x0[4], ptr_x0[5] 
+
+       LDDW.1 *A_ptr_lx1++[2],B_lx1:B_lx0                  ;load ptr_x0[0], ptr_x0[1] 
+       LDDW.2 *B_ptr_lx1++[2],B_lx3:B_lx2                  ;load ptr_x0[2], ptr_x0[3]  
+       LDDW.1 *A_ptr_lx1++[2],B_lx5:B_lx4                  ;load ptr_x0[4], ptr_x0[5] 
+       LDDW.2 *B_ptr_lx1++[2],B_lx7:B_lx6                  ;load ptr_x0[4], ptr_x0[5] 
+
+        rotl.1 A_lx0,     0,  A_lxh0_0                           ;xh0_0 = x0 
+        rotl.1 A_lx1,     0,  A_lxh1_0                           ;xh1_0 = x1 
+        rotl.1 A_lx2,     0,  A_lxh0_1                           ;xh0_1 = x2   
+        rotl.1 A_lx3,     0,  A_lxh1_1                           ;xh1_1 = x3
+
+        rotl.2 B_lx0,     0,  B_lxh0_0                           ;xh0_0 = x0 
+        rotl.2 B_lx1,     0,  B_lxh1_0                           ;xh1_0 = x1 
+        rotl.2 B_lx2,     0,  B_lxh0_1                           ;xh0_1 = x2   
+        rotl.2 B_lx3,     0,  B_lxh1_1                           ;xh1_1 = x3 
+ 
+        DADDSP.1 A_lxh1_0:A_lxh0_0, A_lxh1_1:A_lxh0_1, A_lyt1:A_lyt0    ;yt0 =xh0_0 + xh0_1; yt1 =xh1_0 + xh1_1
+        DSUBSP.1 A_lxh1_0:A_lxh0_0, A_lxh1_1:A_lxh0_1, A_lyt5:A_lyt4    ;yt4 =xh0_0 - xh0_1, yt5 =xh1_0 - xh1_1
+
+        DADDSP.2 B_lxh1_0:B_lxh0_0, B_lxh1_1:B_lxh0_1, B_lyt1:B_lyt0    ;yt0 =xh0_0 + xh0_1, yt1 =xh1_0 + xh1_1
+        DSUBSP.2 B_lxh1_0:B_lxh0_0, B_lxh1_1:B_lxh0_1, B_lyt5:B_lyt4    ;yt4 =xh0_0 - xh0_1, yt5 =xh1_0 - xh1_1
+
+
+         rotl.1 A_lx4,     0,  A_lxl0_0                 ;xl0_0 = x4  
+         rotl.1 A_lx5,     0,  A_lxl1_0                 ;xl1_0 = x5   
+         rotl.1 A_lx6,     0,  A_lxl1_1                 ;xl1_1 = x6
+         rotl.1 A_lx7,     0,  A_lxl0_1                 ;xl0_1 = x7
+ 
+         rotl.2 B_lx4,     0,  B_lxl0_0                 ;xl0_0 = x4  
+         rotl.2 B_lx5,     0,  B_lxl1_0                 ;xl1_0 = x5   
+         rotl.2 B_lx6,     0,  B_lxl1_1                 ;xl1_1 = x6
+         rotl.2 B_lx7,     0,  B_lxl0_1                 ;xl0_1 = x7
+
+         SUBSP.1 A_lxl0_0,    A_lxl1_1,        A_lyt2       ;yt2 = xl0_0 + xl1_1 
+         ADDSP.1 A_lxl1_0,    A_lxl0_1,        A_lyt3       ;yt3 = xl1_0 - xl0_1 
+         ADDSP.1 A_lxl0_0,    A_lxl1_1,        A_lyt6       ;yt6 = xl0_0 - xl1_1   
+         SUBSP.1 A_lxl1_0,    A_lxl0_1,        A_lyt7       ;yt7 = xl1_0 + xl0_1
+ 
+         SUBSP.2 B_lxl0_0,    B_lxl1_1,        B_lyt2       ;yt2 = xl0_0 + xl1_1 
+         ADDSP.2 B_lxl1_0,    B_lxl0_1,        B_lyt3       ;yt3 = xl1_0 - xl0_1 
+         ADDSP.2 B_lxl0_0,    B_lxl1_1,        B_lyt6       ;yt6 = xl0_0 - xl1_1   
+         SUBSP.2 B_lxl1_0,    B_lxl0_1,        B_lyt7       ;yt7 = xl1_0 + xl0_1 
+
+         mv.1    A_lyt2,      A_temp1
+         mv.1    A_lyt6,      A_lyt2
+         mv.1    A_temp1,     A_lyt6
+
+         mv.2    B_lyt2,      B_temp1
+         mv.2    B_lyt6,      B_lyt2
+         mv.2    B_temp1,     B_lyt6
+
+         STDW.1  A_lyt1:A_lyt0,    *A_ly1++[A_lnmax]
+         STDW.1  A_lyt3:A_lyt2,    *A_ly1++[A_lnmax]
+         STDW.1  A_lyt5:A_lyt4,    *A_ly1++[A_lnmax]
+         STDW.1  A_lyt7:A_lyt6,    *A_ly1
+
+         STDW.2  B_lyt1:B_lyt0,    *B_ly1++[B_lnmax]
+         STDW.2  B_lyt3:B_lyt2,    *B_ly1++[B_lnmax]
+         STDW.2  B_lyt5:B_lyt4,    *B_ly1++[B_lnmax]
+         STDW.2  B_lyt7:B_lyt6,    *B_ly1
+
+[A_lctr]BDEC.1  LOOP2,       A_lctr
+ 
+ENDFUNCTION:  
+         
+      .return  
+      .endproc
+
+* ======================================================================== *
+*  End of file: fft_SPXSP_p.sa                                             *
+* ------------------------------------------------------------------------ *
+*          Copyright (C) 2004 Texas Instruments, Incorporated.             *
+*                          All Rights Reserved.                            *
+* ======================================================================== *

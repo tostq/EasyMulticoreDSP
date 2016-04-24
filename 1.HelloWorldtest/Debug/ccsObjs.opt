@@ -1,0 +1,1 @@
+"./helloworld.obj" -l"libc.a" "../C6678_unified.cmd" 

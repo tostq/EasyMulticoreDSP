@@ -1,0 +1,164 @@
+
+                .sect ".text:psa"
+
+        .global multTwiddle_vec_1_sa
+
+multTwiddle_vec_1_sa .cproc  A_pInTwiddle, B_wStepRe, A_wStepIm, B_fftSize, A_pOutTwiddle
+
+          .reg     A_zero
+
+          .reg     A_wStepRe0:A_wStepIm0
+          
+          .reg     A_wStepRe2:A_wStepIm2
+          .reg     B_wStepRe2:B_wStepIm2
+
+          .reg     A_wStepRe4:A_wStepIm4
+          .reg     B_wStepRe4:B_wStepIm4
+
+          .reg     A_wStepRe3:A_wStepIm3
+          .reg     B_wStepRe3:B_wStepIm3
+
+
+          .reg     A_twiddleRe0:A_twiddleIm0
+          .reg     B_twiddleRe1:B_twiddleIm1
+          .reg     A_twiddleRe2:A_twiddleIm2
+          .reg     B_twiddleRe3:B_twiddleIm3
+
+
+          .reg     B_pInTwiddle1, B_pOutTwiddle1
+          .reg     A_pInTwiddle2, A_pOutTwiddle2
+          .reg     B_pInTwiddle3, B_pOutTwiddle3
+          .reg     B_i
+
+
+          .reg     A_x_real0:A_x_imag0
+          .reg     B_x_real1:B_x_imag1
+          .reg     A_x_real2:A_x_imag2
+          .reg     B_x_real3:B_x_imag3
+
+          .reg     A_prod3:A_prod2, A_prod1:A_prod0
+          .reg     A_prod7:A_prod6, A_prod5:A_prod4
+          .reg     A_cos:A_sin
+
+          .reg     A_prod3_:A_prod2_, A_prod1_:A_prod0_
+          .reg     A_prod7_:A_prod6_, A_prod5_:A_prod4_
+          .reg     A_cos_:A_sin_
+
+          .reg     B_prod3:B_prod2, B_prod1:B_prod0
+          .reg     B_prod7:B_prod6, B_prod5:B_prod4
+          .reg     B_cos:B_sin
+
+          .reg     B_prod3_:B_prod2_, B_prod1_:B_prod0_
+          .reg     B_prod7_:B_prod6_, B_prod5_:B_prod4_
+          .reg     B_cos_:B_sin_
+
+
+          .reg     A_y_real0:A_y_imag0
+          .reg     B_y_real1:B_y_imag1
+          .reg     A_y_real2:A_y_imag2
+          .reg     B_y_real3:B_y_imag3
+ 
+
+
+          .no_mdep
+
+          zero.1   A_zero
+
+          mv.1     B_wStepRe,    A_wStepRe0
+          mv.1     A_wStepIm,    A_wStepIm0
+          
+          CMPYSP.1  A_wStepRe0:A_wStepIm0,  A_wStepRe0:A_wStepIm0,  A_prod3:A_prod2:A_prod1:A_prod0
+          DADDSP.1  A_prod3:A_prod2, A_prod1:A_prod0, A_wStepRe2:A_wStepIm2
+
+          CMPYSP.1  A_wStepRe2:A_wStepIm2,  A_wStepRe2:A_wStepIm2,  A_prod3:A_prod2:A_prod1:A_prod0
+          DADDSP.1  A_prod3:A_prod2, A_prod1:A_prod0, A_wStepRe4:A_wStepIm4
+
+          CMPYSP.1  A_wStepRe0:A_wStepIm0,  A_wStepRe2:A_wStepIm2,  A_prod3:A_prod2:A_prod1:A_prod0
+          DADDSP.1  A_prod3:A_prod2, A_prod1:A_prod0, A_wStepRe3:A_wStepIm3
+
+          mv.2     A_wStepRe4,    B_wStepRe4
+          mv.2     A_wStepIm4,    B_wStepIm4
+
+
+          mv.1     A_wStepRe4,    A_twiddleRe0
+          subsp.1  A_zero,        A_wStepIm4,    A_twiddleIm0
+
+          mv.2     A_wStepRe3,    B_twiddleRe1
+          subsp.2  A_zero,        A_wStepIm3,    B_twiddleIm1
+
+          mv.1     A_wStepRe2,    A_twiddleRe2
+          subsp.1  A_zero,        A_wStepIm2,    A_twiddleIm2
+
+          mv.2     B_wStepRe,     B_twiddleRe3
+          subsp.2  A_zero,        A_wStepIm,     B_twiddleIm3
+
+
+          add.2    A_pInTwiddle,  8,             B_pInTwiddle1
+          add.2    A_pOutTwiddle, 8,             B_pOutTwiddle1
+
+          add.1    B_pInTwiddle1, 8,             A_pInTwiddle2
+          add.1    B_pOutTwiddle1,8,             A_pOutTwiddle2
+
+          add.2    A_pInTwiddle2, 8,             B_pInTwiddle3
+          add.2    A_pOutTwiddle2,8,             B_pOutTwiddle3
+
+          shr.2    B_fftSize,     2,       B_i
+          sub.2    B_i,           1,       B_i
+LOOP:
+
+          LDDW .1  *A_pInTwiddle++[4],   A_x_real0:A_x_imag0
+          LDDW .2  *B_pInTwiddle1++[4],  B_x_real1:B_x_imag1
+          LDDW .1  *A_pInTwiddle2++[4],  A_x_real2:A_x_imag2
+          LDDW .2  *B_pInTwiddle3++[4],  B_x_real3:B_x_imag3
+
+
+          CMPYSP.1  A_twiddleRe0:A_twiddleIm0, A_wStepRe4:A_wStepIm4, A_prod3:A_prod2:A_prod1:A_prod0
+          DADDSP.1  A_prod3:A_prod2, A_prod1:A_prod0, A_cos:A_sin
+          DMV.1     A_cos, A_sin,        A_twiddleRe0:A_twiddleIm0
+
+          CMPYSP.1  A_x_real0:A_x_imag0, A_cos:A_sin, A_prod7:A_prod6:A_prod5:A_prod4
+          DADDSP.1  A_prod7:A_prod6, A_prod5:A_prod4, A_y_real0:A_y_imag0
+
+
+          CMPYSP.1  A_twiddleRe2:A_twiddleIm2, A_wStepRe4:A_wStepIm4, A_prod3_:A_prod2_:A_prod1_:A_prod0_
+          DADDSP.1  A_prod3_:A_prod2_, A_prod1_:A_prod0_, A_cos_:A_sin_
+          DMV.1     A_cos_, A_sin_,        A_twiddleRe2:A_twiddleIm2
+
+          CMPYSP.1  A_x_real2:A_x_imag2, A_cos_:A_sin_, A_prod7_:A_prod6_:A_prod5_:A_prod4_
+          DADDSP.1  A_prod7_:A_prod6_, A_prod5_:A_prod4_, A_y_real2:A_y_imag2
+
+
+          CMPYSP.2  B_twiddleRe1:B_twiddleIm1, B_wStepRe4:B_wStepIm4, B_prod3:B_prod2:B_prod1:B_prod0
+          DADDSP.2  B_prod3:B_prod2, B_prod1:B_prod0, B_cos:B_sin
+          DMV.2     B_cos, B_sin,        B_twiddleRe1:B_twiddleIm1
+
+          CMPYSP.2  B_x_real1:B_x_imag1, B_cos:B_sin, B_prod7:B_prod6:B_prod5:B_prod4
+          DADDSP.2  B_prod7:B_prod6, B_prod5:B_prod4, B_y_real1:B_y_imag1
+
+
+          CMPYSP.2  B_twiddleRe3:B_twiddleIm3, B_wStepRe4:B_wStepIm4, B_prod3_:B_prod2_:B_prod1_:B_prod0_
+          DADDSP.2  B_prod3_:B_prod2_, B_prod1_:B_prod0_, B_cos_:B_sin_
+          DMV.2     B_cos_, B_sin_,        B_twiddleRe3:B_twiddleIm3
+
+          CMPYSP.2  B_x_real3:B_x_imag3, B_cos_:B_sin_, B_prod7_:B_prod6_:B_prod5_:B_prod4_
+          DADDSP.2  B_prod7_:B_prod6_, B_prod5_:B_prod4_, B_y_real3:B_y_imag3
+
+ 
+          STDW.1    A_y_real0:A_y_imag0, *A_pOutTwiddle++[4]
+          STDW.2    B_y_real1:B_y_imag1, *B_pOutTwiddle1++[4]
+          STDW.1    A_y_real2:A_y_imag2, *A_pOutTwiddle2++[4]
+          STDW.2    B_y_real3:B_y_imag3, *B_pOutTwiddle3++[4]
+
+
+     [B_i]BDEC  .2  LOOP,        B_i 
+
+      .return  
+      .endproc
+
+
+* ======================================================================== *
+*  End of file: fft_SPXSP_p.sa                                             *
+* ------------------------------------------------------------------------ *
+*          Copyright (C) 2004 Texas Instruments, Incorporated.             *
+*                          All Rights Reserved.                            *
+* ======================================================================== *

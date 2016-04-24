@@ -1,0 +1,70 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+[Project Settings]
+ProjectName="vlfft_evmc6678l_xe66"
+ProjectType=External
+CPUFamily=TMS320C66XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Config="Executable"
+
+[Project Dependencies]
+Source="D:/ti/mcsdk_2_01_02_06/demos/vlfft/evmc6678l/Debug/configPkg/package/configPkg.pjt"
+
+["D:/ti/mcsdk_2_01_02_06/demos/vlfft/evmc6678l/Debug/configPkg/package/configPkg.pjt" Settings]
+ExcludeFromBuild=true
+
+
+;
+;  Specify the include path so CCS can find source files; without this 
+;  CCS gets very confused by files with the same name in different 
+;  directories.
+;
+["Compiler" Settings: "Executable"]
+Options=-i"D:/ti/ipc_1_24_03_32/packages" -i"D:/ti/mcsdk_2_01_02_06/demos/vlfft" -i"D:/ti/bios_6_33_05_46/packages" -i"D:/ti/edma3_lld_02_11_05_02/packages" -i"D:/ti/mcsdk_2_01_02_06/demos" -i"D:/ti/ccsv5/ccs_base" -i"D:/ti/xdctools_3_23_03_53/packages" -i"D:\ti\mcsdk_2_01_02_06\demos\vlfft\evmc6678l\Debug" 
+
+[External Makefile]
+ExtMakefile=../../package.bld
+
+;
+;  Name the source files that should show up in the project window; i.e., 
+;  the files we expect the user to edit within CCS.
+;
+[Source Files]
+Source="../../package.bld"
+Source="vlfft_evmc6678l_xe66.c"
+Source="../../D:/ti/mcsdk_2_01_02_06/demos/vlfft/evmc6678l/vlfft_evmc6678l.cfg"
+
+["../../package.bld" Settings: "Executable"]
+UseCustomBuild=true
+CustomBuildCmd=D:\ti\xdctools_3_23_03_53\xdc.exe vlfft_evmc6678l.xe66
+
+; if no custom "clean" command is specified, rebuild all deletes the
+; following files before running the build command above.  
+;
+CustomBuildOutput="vlfft_evmc6678l.xe66"
+
+;  Don't use 'xdc clean' command here because this also deletes the project
+;  file that is currently open.  This causes the command to hang waiting for
+;  CCS to close the file, which it doesn't do (of course).
+;
+;  Instead we only clean out those files associated with the target used to
+;  build the executable.
+;
+CustomCleanCmd=D:\ti\xdctools_3_23_03_53\xdc.exe clean,e66
+;
+;  Always run the xdc command since this command is the one that tracks
+;  dependencies
+;
+Run=Always
+
+;
+;  We need to exclude these from the build or provide a command to run from
+;  the directory containing the file; otherwise CCS complains about not
+;  being able to "build" this file.  Adding a custom build step causes CCS
+;  to run this *in addition* to the project build above; thus we do nothing
+;
+["vlfft_evmc6678l_xe66.c" Settings: "Executable"]
+ExcludeFromBuild=true
+
+["../../D:/ti/mcsdk_2_01_02_06/demos/vlfft/evmc6678l/vlfft_evmc6678l.cfg" Settings: "Executable"]
+ExcludeFromBuild=true

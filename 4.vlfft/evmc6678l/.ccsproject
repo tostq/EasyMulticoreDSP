@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?ccsproject version="1.0"?>
+
+<projectOptions>
+<deviceVariant value="com.ti.ccstudio.deviceModel.C6000.GenericC66xxDevice"/>
+<deviceEndianness value="little"/>
+<codegenToolVersion value="7.3.0A11104"/>
+<isElfFormat value="true"/>
+<rts value="libc.a"/>
+<deviceFamily value="C6000"/>
+</projectOptions>

@@ -1,0 +1,244 @@
+digraph dependencies {
+    label="\nPackage custom.vlfft.evmc6678l.core0 Dependency Graph";
+    size="7.5,10";
+    rankdir=LR;
+    ranksep=".75";
+    concentrate="true";
+    node [fixedsize=true, width=1.5, style=filled, color=black];
+    node [font=Helvetica, fontsize=12, fillcolor=lightgrey];
+    custom_vlfft_evmc6678l_core0 [shape=record,label="custom.vlfft.evmc6678l.core0|", URL="package.rel.xml"];
+    node [fontsize=10, fillcolor=white];
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_cmd [shape=record,label="xdc.services.intern.cmd|1, 0, 0, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\xdc\services\intern\cmd\package/package.rel.svg"];
+    custom_vlfft_evmc6678l_core0 -> xdc_services_intern_cmd;
+    xdc_services_intern_xsr [shape=record,label="xdc.services.intern.xsr|1, 0, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\xdc\services\intern\xsr\package/package.rel.svg"];
+    custom_vlfft_evmc6678l_core0 -> xdc_services_intern_xsr;
+    xdc_services_global [shape=record,label="xdc.services.global|1, 0, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\xdc\services\global\package/package.rel.svg"];
+    custom_vlfft_evmc6678l_core0 -> xdc_services_global;
+    xdc_services_intern_gen [shape=record,label="xdc.services.intern.gen|1, 0, 0, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\xdc\services\intern\gen\package/package.rel.svg"];
+    custom_vlfft_evmc6678l_core0 -> xdc_services_intern_gen;
+    xdc [shape=record,label="xdc|1, 1, 1", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\xdc\package/package.rel.svg"];
+    custom_vlfft_evmc6678l_core0 -> xdc;
+    xdc_bld [shape=record,label="xdc.bld|1, 0, 2", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\xdc\bld\package/package.rel.svg"];
+    custom_vlfft_evmc6678l_core0 -> xdc_bld;
+    xdc_shelf [shape=record,label="xdc.shelf|1, 0, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\xdc\shelf\package/package.rel.svg"];
+    custom_vlfft_evmc6678l_core0 -> xdc_shelf;
+    ti_platforms_generic [shape=record,label="ti.platforms.generic|1, 0, 0, 1", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\ti\platforms\generic\package/package.rel.svg"];
+    custom_vlfft_evmc6678l_core0 -> ti_platforms_generic;
+    xdc_platform [shape=record,label="xdc.platform|1, 0, 1, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\xdc\platform\package/package.rel.svg"];
+    custom_vlfft_evmc6678l_core0 -> xdc_platform;
+    xdc_services_spec [shape=record,label="xdc.services.spec|1, 0, 0, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\xdc\services\spec\package/package.rel.svg"];
+    custom_vlfft_evmc6678l_core0 -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+    xdc_services_spec -> xdc_shelf;
+
+    edge [style=solid, color=lightgrey]
+    xdc_utils_tconf [shape=record,label="xdc.utils.tconf|not found"style=rounded, ];
+    xdc_services_spec -> xdc_utils_tconf;
+    xdc_services_spec -> xdc_shelf;
+    xdc_services_spec -> xdc_services_intern_cmd;
+    xdc_services_spec -> xdc_services_global;
+    xdc_services_spec -> xdc_services_intern_xsr;
+    xdc_services_spec -> xdc_services_intern_gen;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_platform -> xdc_utils_tconf;
+    xdc_platform -> xdc_shelf;
+    xdc_platform -> xdc_services_intern_cmd;
+    xdc_platform -> xdc_services_global;
+    xdc_platform -> xdc_services_intern_xsr;
+    xdc_platform -> xdc_services_intern_gen;
+    xdc_platform -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+    ti_platforms_generic -> xdc_platform;
+
+    edge [style=solid, color=lightgrey]
+    ti_platforms_generic -> xdc_services_intern_gen;
+    ti_targets_arm_elf [shape=record,label="ti.targets.arm.elf|1, 0, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\ti\targets\arm\elf\package/package.rel.svg"];
+    ti_platforms_generic -> ti_targets_arm_elf;
+    ti_platforms_generic -> xdc_services_global;
+    ti_platforms_generic -> xdc_services_spec;
+    ti_targets [shape=record,label="ti.targets|1, 0, 3", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\ti\targets\package/package.rel.svg"];
+    ti_platforms_generic -> ti_targets;
+    microsoft_targets [shape=record,label="microsoft.targets|1, 0, 2, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\microsoft\targets\package/package.rel.svg"];
+    ti_platforms_generic -> microsoft_targets;
+    ti_platforms_generic -> xdc_platform;
+    ti_targets_elf [shape=record,label="ti.targets.elf|1, 0, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\ti\targets\elf\package/package.rel.svg"];
+    ti_platforms_generic -> ti_targets_elf;
+    ti_platforms_generic -> xdc_shelf;
+    ti_targets_arm [shape=record,label="ti.targets.arm|2, 0, 1, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\ti\targets\arm\package/package.rel.svg"];
+    ti_platforms_generic -> ti_targets_arm;
+    ti_platforms_generic -> xdc_services_intern_cmd;
+    ti_platforms_generic -> xdc_services_intern_xsr;
+    gnu_targets [shape=record,label="gnu.targets|1, 0, 1", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\gnu\targets\package/package.rel.svg"];
+    ti_platforms_generic -> gnu_targets;
+    gnu_targets_arm [shape=record,label="gnu.targets.arm|1, 0, 0, 0", URL="../C:\Program Files\Texas Instruments\xdctools_3_20_08_88\packages\gnu\targets\arm\package/package.rel.svg"];
+    ti_platforms_generic -> gnu_targets_arm;
+
+    edge [style=solid, color=blue]
+    gnu_targets_arm -> gnu_targets;
+
+    edge [style=solid, color=lightgrey]
+    gnu_targets_arm -> xdc_services_intern_gen;
+    gnu_targets_arm -> xdc_shelf;
+    gnu_targets_arm -> xdc_services_spec;
+    gnu_targets_arm -> gnu_targets;
+    gnu_targets_arm -> xdc_services_intern_cmd;
+    gnu_targets_arm -> xdc_services_intern_xsr;
+    gnu_targets_arm -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    gnu_targets -> xdc_services_intern_gen;
+    gnu_targets -> xdc_shelf;
+    gnu_targets -> xdc_services_spec;
+    gnu_targets -> xdc_services_intern_cmd;
+    gnu_targets -> xdc_services_intern_xsr;
+    gnu_targets -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+    ti_targets_arm -> ti_targets;
+
+    edge [style=solid, color=lightgrey]
+    ti_targets_arm -> xdc_services_intern_gen;
+    ti_targets_arm -> xdc_shelf;
+    ti_targets_arm -> xdc_services_spec;
+    ti_targets_arm -> ti_targets;
+    ti_targets_arm -> xdc_services_intern_cmd;
+    ti_targets_arm -> xdc_services_intern_xsr;
+    ti_targets_arm -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_targets_elf -> xdc_services_intern_gen;
+    ti_targets_elf -> xdc_shelf;
+    ti_targets_elf -> xdc_services_spec;
+    ti_targets_elf -> ti_targets;
+    ti_targets_elf -> xdc_services_intern_cmd;
+    ti_targets_elf -> xdc_services_intern_xsr;
+    ti_targets_elf -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    microsoft_targets -> xdc_services_intern_gen;
+    microsoft_targets -> xdc_shelf;
+    microsoft_targets -> xdc_services_spec;
+    microsoft_targets -> xdc_services_intern_cmd;
+    microsoft_targets -> xdc_services_intern_xsr;
+    microsoft_targets -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_targets -> xdc_services_intern_gen;
+    ti_targets -> xdc_shelf;
+    ti_targets -> xdc_services_spec;
+    ti_targets -> xdc_services_intern_cmd;
+    ti_targets -> xdc_services_intern_xsr;
+    ti_targets -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    ti_targets_arm_elf -> xdc_services_intern_gen;
+    ti_targets_arm_elf -> ti_targets_arm;
+    ti_targets_arm_elf -> xdc_shelf;
+    ti_targets_arm_elf -> xdc_services_spec;
+    ti_targets_arm_elf -> ti_targets;
+    ti_targets_arm_elf -> xdc_services_intern_cmd;
+    ti_targets_arm_elf -> xdc_services_intern_xsr;
+    ti_targets_arm_elf -> xdc_services_global;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_shelf -> xdc_utils_tconf;
+    xdc_shelf -> xdc_services_intern_cmd;
+    xdc_shelf -> xdc_services_global;
+    xdc_shelf -> xdc_services_intern_xsr;
+    xdc_shelf -> xdc_services_intern_gen;
+    xdc_shelf -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+    xdc_bld -> xdc_services_global;
+    xdc_bld -> xdc_services_intern_cmd;
+
+    edge [style=solid, color=lightgrey]
+    xdc_bld -> xdc_utils_tconf;
+    xdc_bld -> xdc_shelf;
+    xdc_bld -> xdc_services_intern_cmd;
+    xdc_bld -> xdc_services_global;
+    xdc_bld -> xdc_services_intern_xsr;
+    xdc_bld -> xdc_services_intern_gen;
+    xdc_bld -> xdc_services_spec;
+    xdc_bld -> xdc;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc -> xdc_services_global;
+    xdc -> xdc_utils_tconf;
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_gen -> xdc_shelf;
+    xdc_services_intern_gen -> xdc_services_spec;
+    xdc_services_intern_gen -> xdc_services_global;
+    xdc_services_intern_gen -> xdc_services_intern_xsr;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_gen -> xdc_utils_tconf;
+    xdc_services_intern_gen -> xdc_shelf;
+    xdc_services_intern_gen -> xdc_services_intern_cmd;
+    xdc_services_intern_gen -> xdc_services_global;
+    xdc_services_intern_gen -> xdc_services_intern_xsr;
+    xdc_services_intern_gen -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_global -> xdc_utils_tconf;
+    xdc_services_global -> xdc_shelf;
+    xdc_services_global -> xdc_services_intern_cmd;
+    xdc_services_global -> xdc_services_intern_xsr;
+    xdc_services_global -> xdc_services_intern_gen;
+    xdc_services_global -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_xsr -> xdc_services_global;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_xsr -> xdc_utils_tconf;
+    xdc_services_intern_xsr -> xdc_shelf;
+    xdc_services_intern_xsr -> xdc_services_intern_cmd;
+    xdc_services_intern_xsr -> xdc_services_global;
+    xdc_services_intern_xsr -> xdc_services_intern_gen;
+    xdc_services_intern_xsr -> xdc_services_spec;
+
+    edge [style=solid, color=blue]
+    xdc_services_intern_cmd -> xdc_shelf;
+    xdc_services_intern_cmd -> xdc_services_spec;
+    xdc_services_intern_cmd -> xdc_services_global;
+    xdc_services_intern_cmd -> xdc_services_intern_gen;
+
+    edge [style=solid, color=lightgrey]
+    xdc_services_intern_cmd -> xdc_utils_tconf;
+    xdc_services_intern_cmd -> xdc_shelf;
+    xdc_services_intern_cmd -> xdc_services_global;
+    xdc_services_intern_cmd -> xdc_services_intern_xsr;
+    xdc_services_intern_cmd -> xdc_services_intern_gen;
+    xdc_services_intern_cmd -> xdc_services_spec;
+}

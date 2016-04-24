@@ -1,0 +1,23 @@
+#Please Do not delete this comment line.
+#This license is for use by faculty and students of Universities in China.  It may not be distributed outside of this environment.
+
+INCREMENT CCS_LINKER_FULL tidspssw 5.99 permanent uncounted \
+	VENDOR_STRING="Not Used" HOSTID=ANY ISSUER="Texas Instruments \
+	Inc." SN=SITE_UNIVERSITY_CHINA START=01-jan-2012 TS_OK \
+	SIGN="0055 F20D 7CC9 B73B 5A25 6487 3A7F 7900 67CD 048F 2AB2 \
+	F49A 3DAA F512 91A7"
+INCREMENT CCS_ISA_ALL tidspssw 5.99 permanent uncounted \
+	VENDOR_STRING="Not Used" HOSTID=ANY ISSUER="Texas Instruments \
+	Inc." SN=SITE_UNIVERSITY_CHINA START=01-jan-2012 TS_OK \
+	SIGN="00E9 2C0A 2672 7257 AC70 AECE 4218 8300 DA87 DD10 6E76 \
+	C07E F995 48DB B37A"
+INCREMENT CCS_DEBUGGER tidspssw 5.99 permanent uncounted \
+	VENDOR_STRING="Not Used" HOSTID=ANY ISSUER="Texas Instruments \
+	Inc." SN=SITE_UNIVERSITY_CHINA START=01-jan-2012 TS_OK \
+	SIGN="007E 0E4B B13E 1688 2DB5 438D A2C3 F300 4EA6 8CD7 1EFA \
+	B8DF 84C1 DDB0 BC03"
+INCREMENT CCS_CONNECTION_ALL tidspssw 5.99 permanent uncounted \
+	VENDOR_STRING="Not Used" HOSTID=ANY ISSUER="Texas Instruments \
+	Inc." SN=SITE_UNIVERSITY_CHINA START=01-jan-2012 TS_OK \
+	SIGN="0043 AFD9 E798 FC67 75C8 3DFA 4C4A EC00 6F35 ABCD 9701 \
+	5B87 009E 1FEA 218C"

@@ -1,0 +1,1116 @@
+******************************************************************************
+               TMS320C6x Linker PC v7.3.4                      
+******************************************************************************
+>> Linked Thu Apr 21 10:28:20 2016
+
+OUTPUT FILE NAME:   <rgb2gray.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0c21a680
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  LOCAL_L2_SRAM         00800000   00080000  00000000  00080000  RWIX
+  LOCAL_L1P_SRAM        00e00000   00008000  00000000  00008000  RWIX
+  LOCAL_L1D_SRAM        00f00000   00008000  00000000  00008000  RWIX
+  SHRAM                 0c000000   00400000  00222c9d  001dd363  RWIX
+  EMIF16_CS2            70000000   04000000  00000000  04000000  RWIX
+  EMIF16_CS3            74000000   04000000  00000000  04000000  RWIX
+  EMIF16_CS4            78000000   04000000  00000000  04000000  RWIX
+  EMIF16_CS5            7c000000   04000000  00000000  04000000  RWIX
+  DDR3                  80000000   80000000  00000000  80000000  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+0c000000    0c000000    00200000   00000000    rw-
+  0c000000    0c000000    00200000   00000000    rw- .sysmem
+0c200000    0c200000    0001ee72   0001ee72    r-x
+  0c200000    0c200000    0001b500   0001b500    r-x .text
+  0c21b500    0c21b500    00003972   00003972    r-- .const
+0c21ee74    0c21ee74    00000004   00000004    rw-
+  0c21ee74    0c21ee74    00000004   00000004    rw- .neardata
+0c21ee78    0c21ee78    00002000   00000000    rw-
+  0c21ee78    0c21ee78    00002000   00000000    rw- .stack
+0c220e80    0c220e80    00000ec7   00000ec7    rw-
+  0c220e80    0c220e80    00000ec7   00000ec7    rw- .fardata
+0c221d50    0c221d50    00000318   00000000    rw-
+  0c221d50    0c221d50    00000318   00000000    rw- .far
+0c222068    0c222068    00000170   00000170    r--
+  0c222068    0c222068    00000170   00000170    r-- .switch
+0c2221d8    0c2221d8    00000120   00000000    rw-
+  0c2221d8    0c2221d8    00000120   00000000    rw- .cio
+0c2222f8    0c2222f8    000009b8   000009b8    r--
+  0c2222f8    0c2222f8    000009b8   000009b8    r-- .cinit
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    0c000000    00000000     UNINITIALIZED
+
+.sysmem    0    0c000000    00200000     UNINITIALIZED
+                  0c000000    00000008     rts6600_elf.lib : memory.obj (.sysmem)
+                  0c000008    001ffff8     --HOLE--
+
+.text      0    0c200000    0001b500     
+                  0c200000    00009420     emcv.lib : cxarray.obj (.text)
+                  0c209420    00009380              : cxdatastructs.obj (.text)
+                  0c2127a0    000007e0              : cxerror.obj (.text)
+                  0c212f80    000005c0     rts6600_elf.lib : divd.obj (.text:__c6xabi_divd)
+                  0c213540    000005c0                     : _printfi.obj (.text:_getarg_diouxp)
+                  0c213b00    00000480                     : _printfi.obj (.text:_setfield)
+                  0c213f80    00000480                     : fwrite.obj (.text:fwrite)
+                  0c214400    00000460                     : _printfi.obj (.text:_printfi)
+                  0c214860    00000460     emcv.lib : cxcopy.obj (.text)
+                  0c214cc0    00000400     rgb2gray.obj (.text)
+                  0c2150c0    00000300     rts6600_elf.lib : fputs.obj (.text:fputs)
+                  0c2153c0    000002e0                     : _printfi.obj (.text:_pproc_fwp)
+                  0c2156a0    000002c0                     : _printfi.obj (.text:_pproc_fge)
+                  0c215960    000002a0                     : _printfi.obj (.text:fcvt)
+                  0c215c00    000002a0                     : fread.obj (.text:fread)
+                  0c215ea0    00000280                     : _printfi.obj (.text:ecvt)
+                  0c216120    00000280                     : memory.obj (.text:free)
+                  0c2163a0    00000260                     : memory.obj (.text:memalign)
+                  0c216600    00000240                     : imath64.obj (.text:__c6xabi_divull)
+                  0c216840    00000240                     : _printfi.obj (.text:_pconv_e)
+                  0c216a80    00000240                     : _printfi.obj (.text:_pproc_diouxp)
+                  0c216cc0    00000220                     : _printfi.obj (.text:_pproc_str)
+                  0c216ee0    00000200                     : _printfi.obj (.text:_pconv_g)
+                  0c2170e0    000001c0                     : _printfi.obj (.text:_mcpy)
+                  0c2172a0    000001c0                     : fopen.obj (.text:_openfile)
+                  0c217460    000001c0                     : memory.obj (.text:malloc)
+                  0c217620    000001a0                     : trgdrv.obj (.text:HOSTrename)
+                  0c2177c0    000001a0                     : imath40.obj (.text:__c6xabi_divul)
+                  0c217960    00000180                     : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  0c217ae0    00000180                     : autoinit.obj (.text:_auto_init_elf)
+                  0c217c60    00000180                     : lowlev.obj (.text:open)
+                  0c217de0    00000180                     : setvbuf.obj (.text:setvbuf)
+                  0c217f60    00000140                     : _bufread.obj (.text:_buff_read)
+                  0c2180a0    00000140                     : _printfi.obj (.text:_pproc_fflags)
+                  0c2181e0    00000140                     : fputc.obj (.text:fputc)
+                  0c218320    00000140                     : lowlev.obj (.text:getdevice)
+                  0c218460    00000120                     : _printfi.obj (.text:_ltostr)
+                  0c218580    00000120                     : fopen.obj (.text:_search_fp)
+                  0c2186a0    00000120                     : _io_perm.obj (.text:_wrt_ok)
+                  0c2187c0    00000120     emcv.lib : cxarray.obj (.text:cvDecRefData)
+                  0c2188e0    00000120     rts6600_elf.lib : fclose.obj (.text:fclose)
+                  0c218a00    00000100                     : trgdrv.obj (.text:HOSTlseek)
+                  0c218b00    00000100                     : cpy_tbl.obj (.text:copy_in)
+                  0c218c00    00000100                     : fflush.obj (.text:fflush)
+                  0c218d00    000000e0                     : trgdrv.obj (.text:HOSTopen)
+                  0c218de0    000000e0                     : divi.obj (.text:__divi)
+                  0c218ec0    000000e0                     : _printfi.obj (.text:_div)
+                  0c218fa0    000000e0                     : atoi.obj (.text:atoi)
+                  0c219080    000000e0                     : lowlev.obj (.text:close)
+                  0c219160    000000e0                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  0c219240    000000e0                     : exit.obj (.text:exit)
+                  0c219320    000000e0                     : ltoa.obj (.text:ltoa)
+                  0c219400    000000e0                     : memset.obj (.text:memset)
+                  0c2194e0    000000c0                     : trgdrv.obj (.text:HOSTread)
+                  0c2195a0    000000c0                     : trgdrv.obj (.text:HOSTunlink)
+                  0c219660    000000c0                     : trgdrv.obj (.text:HOSTwrite)
+                  0c219720    000000c0                     : divu.obj (.text:__divu)
+                  0c2197e0    000000c0                     : remi.obj (.text:__remi)
+                  0c2198a0    000000c0                     : fopen.obj (.text:_cleanup)
+                  0c219960    000000c0                     : fflush.obj (.text:_doflush)
+                  0c219a20    000000c0                     : _io_perm.obj (.text:_rd_ok)
+                  0c219ae0    000000c0     emcv.lib : cxarray.obj (.text:cvGetNextSparseNode)
+                  0c219ba0    000000c0     rts6600_elf.lib : fseek.obj (.text:fseek)
+                  0c219c60    000000c0                     : lowlev.obj (.text:lseek)
+                  0c219d20    000000c0                     : lowlev.obj (.text:read)
+                  0c219de0    000000c0                     : lowlev.obj (.text:write)
+                  0c219ea0    000000a0                     : trgdrv.obj (.text:HOSTclose)
+                  0c219f40    000000a0     emcv.lib : cxdatastructs.obj (.text:_Z7icvMed3PcS_S_PFYiPKvS1_PvES2_)
+                  0c219fe0    000000a0     rts6600_elf.lib : _printfi.obj (.text:_ecpy)
+                  0c21a080    000000a0                     : _printfi.obj (.text:_fcpy)
+                  0c21a120    000000a0                     : _printfi.obj (.text:_pconv_f)
+                  0c21a1c0    000000a0                     : lowlev.obj (.text:finddevice)
+                  0c21a260    000000a0                     : memcpy64.obj (.text:memcpy)
+                  0c21a300    000000a0                     : memory.obj (.text:minsert)
+                  0c21a3a0    000000a0                     : modf.obj (.text:modf)
+                  0c21a440    000000a0                     : memory.obj (.text:mremove)
+                  0c21a4e0    000000a0                     : lowlev.obj (.text:tabinit)
+                  0c21a580    00000080     emcv.lib : cxarray.obj (.text:_Z7cvRoundd)
+                  0c21a600    00000080     rts6600_elf.lib : llshift.obj (.text:__c6xabi_llshl)
+                  0c21a680    00000080                     : boot.obj (.text:_c_int00)
+                  0c21a700    00000080                     : memory.obj (.text:_minit)
+                  0c21a780    00000080     emcv.lib : cxarray.obj (.text:cvSetNew)
+                  0c21a800    00000080              : cxarray.obj (.text:cvSetRemoveByPtr)
+                  0c21a880    00000080              : cxalloc.obj (.text)
+                  0c21a900    00000080     rts6600_elf.lib : fprintf.obj (.text:fprintf)
+                  0c21a980    00000080                     : printf.obj (.text:printf)
+                  0c21aa00    00000080                     : trgmsg.obj (.text:readmsg)
+                  0c21aa80    00000080                     : strncpy.obj (.text:strncpy)
+                  0c21ab00    00000080                     : lowlev.obj (.text:unlink)
+                  0c21ab80    00000060     emcv.lib : cxarray.obj (.text:_Z10cvAlignPtrPKvi)
+                  0c21abe0    00000060              : cxarray.obj (.text:_Z14cvCvToIplDepthi)
+                  0c21ac40    00000060              : cxarray.obj (.text:_Z6cvRectiiii)
+                  0c21aca0    00000060              : cxarray.obj (.text:_Z7cvAlignii)
+                  0c21ad00    00000060     rts6600_elf.lib : assert.obj (.text:__c6xabi_abort_msg)
+                  0c21ad60    00000060                     : frcmpyd_div.obj (.text:__c6xabi_frcmpyd_div)
+                  0c21adc0    00000060                     : llshift.obj (.text:__c6xabi_llshru)
+                  0c21ae20    00000060                     : imath64.obj (.text:_subcull)
+                  0c21ae80    00000060                     : fopen.obj (.text:fopen)
+                  0c21aee0    00000060                     : memccpy.obj (.text:memccpy)
+                  0c21af40    00000060                     : memmov.obj (.text:memmove)
+                  0c21afa0    00000060                     : sprintf.obj (.text:sprintf)
+                  0c21b000    00000060                     : strcpy.obj (.text:strcpy)
+                  0c21b060    00000060                     : trgmsg.obj (.text:writemsg)
+                  0c21b0c0    00000040     emcv.lib : cxarray.obj (.text:_Z12cvGetMatSizePK5CvMat)
+                  0c21b100    00000040     rgb2gray.obj (.text:_Z6cvSizeii)
+                  0c21b140    00000040     rts6600_elf.lib : isinf.obj (.text:__c6xabi_isinf)
+                  0c21b180    00000040                     : _printfi.obj (.text:__c6xabi_isnan)
+                  0c21b1c0    00000040                     : strasg.obj (.text:__strasgi_64plus)
+                  0c21b200    00000040                     : args_main.obj (.text:_args_main)
+                  0c21b240    00000040                     : sprintf.obj (.text:_outs)
+                  0c21b280    00000040                     : ceil.obj (.text:ceil)
+                  0c21b2c0    00000040     emcv.lib : cxdatastructs.obj (.text:cvGetSetElem)
+                  0c21b300    00000040     rts6600_elf.lib : floor.obj (.text:floor)
+                  0c21b340    00000040                     : strlen.obj (.text:strlen)
+                  0c21b380    00000020     emcv.lib : cxdatastructs.obj (.text:_Z11cvAlignLeftii)
+                  0c21b3a0    00000020     rts6600_elf.lib : negll.obj (.text:__c6xabi_negll)
+                  0c21b3c0    00000020                     : _lock.obj (.text:_nop)
+                  0c21b3e0    00000020                     : fprintf.obj (.text:_outc)
+                  0c21b400    00000020                     : printf.obj (.text:_outc)
+                  0c21b420    00000020                     : sprintf.obj (.text:_outc)
+                  0c21b440    00000020                     : fprintf.obj (.text:_outs)
+                  0c21b460    00000020                     : printf.obj (.text:_outs)
+                  0c21b480    00000020                     : exit.obj (.text:abort)
+                  0c21b4a0    00000020     emcv.lib : cxarray.obj (.text:cvReleaseMatND)
+                  0c21b4c0    00000020     rts6600_elf.lib : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  0c21b4e0    00000020                     : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+
+.const     0    0c21b500    00003972     
+                  0c21b500    00001b10     emcv.lib : cxdatastructs.obj (.const:.string)
+                  0c21d010    00001054              : cxarray.obj (.const:.string)
+                  0c21e064    0000000c              : cxdatastructs.obj (.const)
+                  0c21e070    00000600              : cxtables.obj (.const:icv8x32fTab)
+                  0c21e670    000003ac              : cxerror.obj (.const:.string)
+                  0c21ea1c    00000003     rts6600_elf.lib : assert.obj (.const:.string)
+                  0c21ea1f    00000001     --HOLE-- [fill = 0]
+                  0c21ea20    00000101                     : ctype.obj (.const:_ctypes_)
+                  0c21eb21    00000003     --HOLE-- [fill = 0]
+                  0c21eb24    000000c0     rgb2gray.obj (.const:.string)
+                  0c21ebe4    00000004     --HOLE-- [fill = 0]
+                  0c21ebe8    00000098     emcv.lib : cxarray.obj (.const)
+                  0c21ec80    00000066              : cxarray.obj (.const:_ZZ7cvAligniiEs)
+                  0c21ece6    0000000a     --HOLE-- [fill = 0]
+                  0c21ecf0    00000051              : cxarray.obj (.const:_ZZ10cvAlignPtrPKviEs)
+                  0c21ed41    00000003     --HOLE-- [fill = 0]
+                  0c21ed44    00000050              : cxcopy.obj (.const:.string)
+                  0c21ed94    0000000c     --HOLE-- [fill = 0]
+                  0c21eda0    0000004b              : cxarray.obj (.const:_ZZ16cvSetRemoveByPtrEs)
+                  0c21edeb    00000001     --HOLE-- [fill = 0]
+                  0c21edec    00000024              : cxalloc.obj (.const:.string)
+                  0c21ee10    00000023     rts6600_elf.lib : _printfi.obj (.const:.string)
+                  0c21ee33    0000000d     --HOLE-- [fill = 0]
+                  0c21ee40    00000020     emcv.lib : cxdatastructs.obj (.const:icvPower2ShiftTab)
+                  0c21ee60    00000012              : cxtables.obj (.const:icvDepthToType)
+
+.neardata 
+*          0    0c21ee74    00000004     
+                  0c21ee74    00000004     emcv.lib : cxerror.obj (.neardata)
+
+.stack     0    0c21ee78    00002000     UNINITIALIZED
+                  0c21ee78    00000008     rts6600_elf.lib : boot.obj (.stack)
+                  0c21ee80    00001ff8     --HOLE--
+
+.fardata   0    0c220e80    00000ec7     
+                  0c220e80    000001e0     rts6600_elf.lib : defs.obj (.fardata:_ftable)
+                  0c221060    000000a0                     : lowlev.obj (.fardata:_stream)
+                  0c221100    00000078                     : lowlev.obj (.fardata:_device)
+                  0c221178    00000008                     : _lock.obj (.fardata)
+                  0c221180    00000020     emcv.lib : cxarray.obj (.fardata:tab$58)
+                  0c2211a0    00000018              : cxdatastructs.obj (.fardata:cvFuncName$11)
+                  0c2211b8    00000004     rts6600_elf.lib : defs.obj (.fardata)
+                  0c2211bc    00000004                     : fopen.obj (.fardata)
+                  0c2211c0    00000018     emcv.lib : cxarray.obj (.fardata:cvFuncName$15)
+                  0c2211d8    00000004     rts6600_elf.lib : lowlev.obj (.fardata)
+                  0c2211dc    00000004     --HOLE--
+                  0c2211e0    00000018     emcv.lib : cxdatastructs.obj (.fardata:cvFuncName$16)
+                  0c2211f8    00000008     --HOLE--
+                  0c221200    00000018              : cxdatastructs.obj (.fardata:cvFuncName$3)
+                  0c221218    00000008     --HOLE--
+                  0c221220    00000018              : cxdatastructs.obj (.fardata:cvFuncName$70)
+                  0c221238    00000008     --HOLE--
+                  0c221240    00000017              : cxdatastructs.obj (.fardata:cvFuncName$57)
+                  0c221257    00000009     --HOLE--
+                  0c221260    00000017              : cxdatastructs.obj (.fardata:cvFuncName$9)
+                  0c221277    00000009     --HOLE--
+                  0c221280    00000016              : cxdatastructs.obj (.fardata:cvFuncName$51)
+                  0c221296    0000000a     --HOLE--
+                  0c2212a0    00000016              : cxdatastructs.obj (.fardata:cvFuncName$59)
+                  0c2212b6    0000000a     --HOLE--
+                  0c2212c0    00000016              : cxdatastructs.obj (.fardata:cvFuncName$64)
+                  0c2212d6    0000000a     --HOLE--
+                  0c2212e0    00000015              : cxdatastructs.obj (.fardata:cvFuncName$4)
+                  0c2212f5    0000000b     --HOLE--
+                  0c221300    00000015              : cxdatastructs.obj (.fardata:cvFuncName$53)
+                  0c221315    0000000b     --HOLE--
+                  0c221320    00000015              : cxarray.obj (.fardata:cvFuncName$62)
+                  0c221335    0000000b     --HOLE--
+                  0c221340    00000015              : cxdatastructs.obj (.fardata:cvFuncName$63)
+                  0c221355    0000000b     --HOLE--
+                  0c221360    00000015              : cxdatastructs.obj (.fardata:cvFuncName$68)
+                  0c221375    0000000b     --HOLE--
+                  0c221380    00000015              : cxdatastructs.obj (.fardata:cvFuncName$69)
+                  0c221395    0000000b     --HOLE--
+                  0c2213a0    00000014              : cxdatastructs.obj (.fardata:cvFuncName$55)
+                  0c2213b4    0000000c     rts6600_elf.lib : exit.obj (.fardata)
+                  0c2213c0    00000014     emcv.lib : cxarray.obj (.fardata:cvFuncName$59)
+                  0c2213d4    0000000c     rts6600_elf.lib : memory.obj (.fardata)
+                  0c2213e0    00000014     emcv.lib : cxdatastructs.obj (.fardata:cvFuncName$5)
+                  0c2213f4    0000000c     --HOLE--
+                  0c221400    00000014              : cxarray.obj (.fardata:cvFuncName$71)
+                  0c221414    0000000c     --HOLE--
+                  0c221420    00000014              : cxarray.obj (.fardata:cvFuncName$8)
+                  0c221434    0000000c     --HOLE--
+                  0c221440    00000014              : cxdatastructs.obj (.fardata:cvFuncName$8)
+                  0c221454    0000000c     --HOLE--
+                  0c221460    00000013              : cxarray.obj (.fardata:cvFuncName$13)
+                  0c221473    0000000d     --HOLE--
+                  0c221480    00000013              : cxdatastructs.obj (.fardata:cvFuncName$18)
+                  0c221493    0000000d     --HOLE--
+                  0c2214a0    00000013              : cxdatastructs.obj (.fardata:cvFuncName$1)
+                  0c2214b3    0000000d     --HOLE--
+                  0c2214c0    00000013              : cxdatastructs.obj (.fardata:cvFuncName$2)
+                  0c2214d3    0000000d     --HOLE--
+                  0c2214e0    00000012              : cxdatastructs.obj (.fardata:cvFuncName$10)
+                  0c2214f2    0000000e     --HOLE--
+                  0c221500    00000012              : cxarray.obj (.fardata:cvFuncName$12)
+                  0c221512    0000000e     --HOLE--
+                  0c221520    00000012              : cxdatastructs.obj (.fardata:cvFuncName$13)
+                  0c221532    0000000e     --HOLE--
+                  0c221540    00000012              : cxdatastructs.obj (.fardata:cvFuncName$25)
+                  0c221552    0000000e     --HOLE--
+                  0c221560    00000012              : cxdatastructs.obj (.fardata:cvFuncName$26)
+                  0c221572    0000000e     --HOLE--
+                  0c221580    00000012              : cxarray.obj (.fardata:cvFuncName$2)
+                  0c221592    0000000e     --HOLE--
+                  0c2215a0    00000012              : cxarray.obj (.fardata:cvFuncName$31)
+                  0c2215b2    0000000e     --HOLE--
+                  0c2215c0    00000012              : cxarray.obj (.fardata:cvFuncName$32)
+                  0c2215d2    0000000e     --HOLE--
+                  0c2215e0    00000012              : cxdatastructs.obj (.fardata:cvFuncName$58)
+                  0c2215f2    0000000e     --HOLE--
+                  0c221600    00000012              : cxarray.obj (.fardata:cvFuncName$61)
+                  0c221612    0000000e     --HOLE--
+                  0c221620    00000012              : cxdatastructs.obj (.fardata:cvFuncName$61)
+                  0c221632    0000000e     --HOLE--
+                  0c221640    00000012              : cxdatastructs.obj (.fardata:cvFuncName$62)
+                  0c221652    0000000e     --HOLE--
+                  0c221660    00000012              : cxarray.obj (.fardata:cvFuncName$6)
+                  0c221672    0000000e     --HOLE--
+                  0c221680    00000012              : cxdatastructs.obj (.fardata:cvFuncName$6)
+                  0c221692    0000000e     --HOLE--
+                  0c2216a0    00000012              : cxdatastructs.obj (.fardata:cvFuncName$7)
+                  0c2216b2    0000000e     --HOLE--
+                  0c2216c0    00000011              : cxarray.obj (.fardata:cvFuncName$14)
+                  0c2216d1    0000000f     --HOLE--
+                  0c2216e0    00000011              : cxdatastructs.obj (.fardata:cvFuncName$20)
+                  0c2216f1    0000000f     --HOLE--
+                  0c221700    00000011              : cxdatastructs.obj (.fardata:cvFuncName$22)
+                  0c221711    0000000f     --HOLE--
+                  0c221720    00000011              : cxdatastructs.obj (.fardata:cvFuncName$24)
+                  0c221731    0000000f     --HOLE--
+                  0c221740    00000011              : cxdatastructs.obj (.fardata:cvFuncName$37)
+                  0c221751    0000000f     --HOLE--
+                  0c221760    00000011              : cxdatastructs.obj (.fardata:cvFuncName$38)
+                  0c221771    0000000f     --HOLE--
+                  0c221780    00000011              : cxdatastructs.obj (.fardata:cvFuncName$52)
+                  0c221791    0000000f     --HOLE--
+                  0c2217a0    00000011              : cxdatastructs.obj (.fardata:cvFuncName$60)
+                  0c2217b1    0000000f     --HOLE--
+                  0c2217c0    00000010              : cxdatastructs.obj (.fardata:cvFuncName$15)
+                  0c2217d0    00000010              : cxdatastructs.obj (.fardata:cvFuncName$19)
+                  0c2217e0    00000010              : cxarray.obj (.fardata:cvFuncName$3)
+                  0c2217f0    00000010              : cxdatastructs.obj (.fardata:cvFuncName$54)
+                  0c221800    00000010              : cxarray.obj (.fardata:cvFuncName$65)
+                  0c221810    00000010              : cxdatastructs.obj (.fardata:cvFuncName$65)
+                  0c221820    00000010              : cxdatastructs.obj (.fardata:cvFuncName$67)
+                  0c221830    0000000f              : cxdatastructs.obj (.fardata:cvFuncName$23)
+                  0c22183f    00000001     --HOLE--
+                  0c221840    0000000f              : cxdatastructs.obj (.fardata:cvFuncName$29)
+                  0c22184f    00000001     --HOLE--
+                  0c221850    0000000f              : cxdatastructs.obj (.fardata:cvFuncName$33)
+                  0c22185f    00000001     --HOLE--
+                  0c221860    0000000f              : cxdatastructs.obj (.fardata:cvFuncName$42)
+                  0c22186f    00000001     --HOLE--
+                  0c221870    0000000f              : cxarray.obj (.fardata:cvFuncName$54)
+                  0c22187f    00000001     --HOLE--
+                  0c221880    0000000f              : cxdatastructs.obj (.fardata:cvFuncName$56)
+                  0c22188f    00000001     --HOLE--
+                  0c221890    0000000f              : cxarray.obj (.fardata:cvFuncName$63)
+                  0c22189f    00000001     --HOLE--
+                  0c2218a0    0000000f              : cxdatastructs.obj (.fardata:cvFuncName$71)
+                  0c2218af    00000001     --HOLE--
+                  0c2218b0    0000000f              : cxdatastructs.obj (.fardata:cvFuncName$72)
+                  0c2218bf    00000001     --HOLE--
+                  0c2218c0    0000000e              : cxarray.obj (.fardata:cvFuncName$11)
+                  0c2218ce    00000002     --HOLE--
+                  0c2218d0    0000000e              : cxarray.obj (.fardata:cvFuncName$16)
+                  0c2218de    00000002     --HOLE--
+                  0c2218e0    0000000e              : cxarray.obj (.fardata:cvFuncName$17)
+                  0c2218ee    00000002     --HOLE--
+                  0c2218f0    0000000e              : cxarray.obj (.fardata:cvFuncName$20)
+                  0c2218fe    00000002     --HOLE--
+                  0c221900    0000000e              : cxdatastructs.obj (.fardata:cvFuncName$21)
+                  0c22190e    00000002     --HOLE--
+                  0c221910    0000000e              : cxarray.obj (.fardata:cvFuncName$22)
+                  0c22191e    00000002     --HOLE--
+                  0c221920    0000000e              : cxdatastructs.obj (.fardata:cvFuncName$30)
+                  0c22192e    00000002     --HOLE--
+                  0c221930    0000000e              : cxdatastructs.obj (.fardata:cvFuncName$34)
+                  0c22193e    00000002     --HOLE--
+                  0c221940    0000000e              : cxdatastructs.obj (.fardata:cvFuncName$48)
+                  0c22194e    00000002     --HOLE--
+                  0c221950    0000000e              : cxdatastructs.obj (.fardata:cvFuncName$50)
+                  0c22195e    00000002     --HOLE--
+                  0c221960    0000000e              : cxarray.obj (.fardata:cvFuncName$60)
+                  0c22196e    00000002     --HOLE--
+                  0c221970    0000000e              : cxarray.obj (.fardata:cvFuncName$64)
+                  0c22197e    00000002     --HOLE--
+                  0c221980    0000000e              : cxarray.obj (.fardata:cvFuncName$66)
+                  0c22198e    00000002     --HOLE--
+                  0c221990    0000000e              : cxarray.obj (.fardata:cvFuncName$68)
+                  0c22199e    00000002     --HOLE--
+                  0c2219a0    0000000e              : cxarray.obj (.fardata:cvFuncName$69)
+                  0c2219ae    00000002     --HOLE--
+                  0c2219b0    0000000e              : cxarray.obj (.fardata:cvFuncName$7)
+                  0c2219be    00000002     --HOLE--
+                  0c2219c0    0000000d              : cxdatastructs.obj (.fardata:cvFuncName$14)
+                  0c2219cd    00000003     --HOLE--
+                  0c2219d0    0000000d              : cxarray.obj (.fardata:cvFuncName$18)
+                  0c2219dd    00000003     --HOLE--
+                  0c2219e0    0000000d              : cxarray.obj (.fardata:cvFuncName$21)
+                  0c2219ed    00000003     --HOLE--
+                  0c2219f0    0000000d              : cxarray.obj (.fardata:cvFuncName$24)
+                  0c2219fd    00000003     --HOLE--
+                  0c221a00    0000000d              : cxdatastructs.obj (.fardata:cvFuncName$49)
+                  0c221a0d    00000003     --HOLE--
+                  0c221a10    0000000d              : cxarray.obj (.fardata:cvFuncName$4)
+                  0c221a1d    00000003     --HOLE--
+                  0c221a20    0000000d              : cxarray.obj (.fardata:cvFuncName$57)
+                  0c221a2d    00000003     --HOLE--
+                  0c221a30    0000000d              : cxdatastructs.obj (.fardata:cvFuncName$66)
+                  0c221a3d    00000003     --HOLE--
+                  0c221a40    0000000d              : cxarray.obj (.fardata:cvFuncName$70)
+                  0c221a4d    00000003     --HOLE--
+                  0c221a50    0000000d              : cxarray.obj (.fardata:cvFuncName$9)
+                  0c221a5d    00000003     --HOLE--
+                  0c221a60    0000000c              : cxdatastructs.obj (.fardata:cvFuncName$12)
+                  0c221a6c    00000004     --HOLE--
+                  0c221a70    0000000c              : cxarray.obj (.fardata:cvFuncName$1)
+                  0c221a7c    00000004     --HOLE--
+                  0c221a80    0000000c              : cxdatastructs.obj (.fardata:cvFuncName$31)
+                  0c221a8c    00000004     --HOLE--
+                  0c221a90    0000000c              : cxdatastructs.obj (.fardata:cvFuncName$32)
+                  0c221a9c    00000004     --HOLE--
+                  0c221aa0    0000000c              : cxdatastructs.obj (.fardata:cvFuncName$41)
+                  0c221aac    00000004     --HOLE--
+                  0c221ab0    0000000c              : cxarray.obj (.fardata:cvFuncName$43)
+                  0c221abc    00000004     --HOLE--
+                  0c221ac0    0000000c              : cxarray.obj (.fardata:cvFuncName$44)
+                  0c221acc    00000004     --HOLE--
+                  0c221ad0    0000000c              : cxdatastructs.obj (.fardata:cvFuncName$44)
+                  0c221adc    00000004     --HOLE--
+                  0c221ae0    0000000c              : cxarray.obj (.fardata:cvFuncName$45)
+                  0c221aec    00000004     --HOLE--
+                  0c221af0    0000000c              : cxarray.obj (.fardata:cvFuncName$46)
+                  0c221afc    00000004     --HOLE--
+                  0c221b00    0000000c              : cxdatastructs.obj (.fardata:cvFuncName$46)
+                  0c221b0c    00000004     --HOLE--
+                  0c221b10    0000000c              : cxarray.obj (.fardata:cvFuncName$49)
+                  0c221b1c    00000004     --HOLE--
+                  0c221b20    0000000c              : cxarray.obj (.fardata:cvFuncName$50)
+                  0c221b2c    00000004     --HOLE--
+                  0c221b30    0000000c              : cxarray.obj (.fardata:cvFuncName$51)
+                  0c221b3c    00000004     --HOLE--
+                  0c221b40    0000000c              : cxarray.obj (.fardata:cvFuncName$52)
+                  0c221b4c    00000004     --HOLE--
+                  0c221b50    0000000b              : cxarray.obj (.fardata:cvFuncName$10)
+                  0c221b5b    00000005     --HOLE--
+                  0c221b60    0000000b              : cxdatastructs.obj (.fardata:cvFuncName$17)
+                  0c221b6b    00000005     --HOLE--
+                  0c221b70    0000000b              : cxdatastructs.obj (.fardata:cvFuncName$35)
+                  0c221b7b    00000005     --HOLE--
+                  0c221b80    0000000b              : cxdatastructs.obj (.fardata:cvFuncName$36)
+                  0c221b8b    00000005     --HOLE--
+                  0c221b90    0000000b              : cxdatastructs.obj (.fardata:cvFuncName$47)
+                  0c221b9b    00000005     --HOLE--
+                  0c221ba0    0000000b              : cxarray.obj (.fardata:cvFuncName$56)
+                  0c221bab    00000005     --HOLE--
+                  0c221bb0    0000000b              : cxarray.obj (.fardata:cvFuncName$5)
+                  0c221bbb    00000005     --HOLE--
+                  0c221bc0    0000000a              : cxarray.obj (.fardata:cvFuncName$19)
+                  0c221bca    00000006     --HOLE--
+                  0c221bd0    0000000a              : cxarray.obj (.fardata:cvFuncName$23)
+                  0c221bda    00000006     --HOLE--
+                  0c221be0    0000000a              : cxarray.obj (.fardata:cvFuncName$25)
+                  0c221bea    00000006     --HOLE--
+                  0c221bf0    0000000a              : cxarray.obj (.fardata:cvFuncName$27)
+                  0c221bfa    00000006     --HOLE--
+                  0c221c00    0000000a              : cxdatastructs.obj (.fardata:cvFuncName$27)
+                  0c221c0a    00000006     --HOLE--
+                  0c221c10    0000000a              : cxarray.obj (.fardata:cvFuncName$28)
+                  0c221c1a    00000006     --HOLE--
+                  0c221c20    0000000a              : cxarray.obj (.fardata:cvFuncName$29)
+                  0c221c2a    00000006     --HOLE--
+                  0c221c30    0000000a              : cxcopy.obj (.fardata:cvFuncName$2)
+                  0c221c3a    00000006     --HOLE--
+                  0c221c40    0000000a              : cxarray.obj (.fardata:cvFuncName$30)
+                  0c221c4a    00000006     --HOLE--
+                  0c221c50    0000000a              : cxdatastructs.obj (.fardata:cvFuncName$39)
+                  0c221c5a    00000006     --HOLE--
+                  0c221c60    0000000a              : cxdatastructs.obj (.fardata:cvFuncName$40)
+                  0c221c6a    00000006     --HOLE--
+                  0c221c70    0000000a              : cxarray.obj (.fardata:cvFuncName$55)
+                  0c221c7a    00000006     --HOLE--
+                  0c221c80    00000009              : cxdatastructs.obj (.fardata:cvFuncName$28)
+                  0c221c89    00000007     --HOLE--
+                  0c221c90    00000009              : cxdatastructs.obj (.fardata:cvFuncName$45)
+                  0c221c99    00000007     --HOLE--
+                  0c221ca0    00000009              : cxarray.obj (.fardata:cvFuncName$53)
+                  0c221ca9    00000007     --HOLE--
+                  0c221cb0    00000008              : cxalloc.obj (.fardata:cvFuncName$1)
+                  0c221cb8    00000008     --HOLE--
+                  0c221cc0    00000008              : cxarray.obj (.fardata:cvFuncName$33)
+                  0c221cc8    00000008     --HOLE--
+                  0c221cd0    00000008              : cxarray.obj (.fardata:cvFuncName$34)
+                  0c221cd8    00000008     --HOLE--
+                  0c221ce0    00000008              : cxarray.obj (.fardata:cvFuncName$35)
+                  0c221ce8    00000008     --HOLE--
+                  0c221cf0    00000008              : cxarray.obj (.fardata:cvFuncName$36)
+                  0c221cf8    00000008     --HOLE--
+                  0c221d00    00000008              : cxarray.obj (.fardata:cvFuncName$37)
+                  0c221d08    00000008     --HOLE--
+                  0c221d10    00000008              : cxarray.obj (.fardata:cvFuncName$39)
+                  0c221d18    00000008     --HOLE--
+                  0c221d20    00000008              : cxarray.obj (.fardata:cvFuncName$47)
+                  0c221d28    00000008     --HOLE--
+                  0c221d30    00000008              : cxarray.obj (.fardata:cvFuncName$48)
+                  0c221d38    00000008     --HOLE--
+                  0c221d40    00000007              : cxcopy.obj (.fardata:cvFuncName$1)
+
+.far       0    0c221d50    00000318     UNINITIALIZED
+                  0c221d50    00000140     rts6600_elf.lib : defs.obj (.far)
+                  0c221e90    00000100     emcv.lib : cxerror.obj (.far)
+                  0c221f90    000000d8     rts6600_elf.lib : trgdrv.obj (.far)
+
+.switch    0    0c222068    00000170     
+                  0c222068    000000a8     emcv.lib : cxerror.obj (.switch:cvErrorStr)
+                  0c222110    00000060              : cxerror.obj (.switch:cvErrorFromIppStatus)
+                  0c222170    0000001c              : cxarray.obj (.switch:_Z10icvGetRealPKvi)
+                  0c22218c    0000001c              : cxarray.obj (.switch:cvRawDataToScalar)
+                  0c2221a8    0000001c              : cxarray.obj (.switch:cvScalarToRawData)
+                  0c2221c4    00000014              : cxarray.obj (.switch:_Z10icvSetRealdPKvi)
+
+.cio       0    0c2221d8    00000120     UNINITIALIZED
+                  0c2221d8    00000120     rts6600_elf.lib : trgmsg.obj (.cio)
+
+.cinit     0    0c2222f8    000009b8     
+                  0c2222f8    00000980     (.cinit..fardata.load) [load image, compression = rle]
+                  0c222c78    0000000c     (__TI_handler_table)
+                  0c222c84    00000009     (.cinit..neardata.load) [load image, compression = rle]
+                  0c222c8d    00000003     --HOLE-- [fill = 0]
+                  0c222c90    00000008     (.cinit..far.load) [load image, compression = zero_init]
+                  0c222c98    00000018     (__TI_cinit_table)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0c222c98 records: 3, size/record: 8, table size: 24
+	.fardata: load addr=0c2222f8, load size=00000980 bytes, run addr=0c220e80, run size=00000ec7 bytes, compression=rle
+	.neardata: load addr=0c222c84, load size=00000009 bytes, run addr=0c21ee74, run size=00000004 bytes, compression=rle
+	.far: load addr=0c222c90, load size=00000008 bytes, run addr=0c221d50, run size=00000318 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0c222c78 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_rle24
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+0c21b480   C$$EXIT
+0c21b0b8   C$$IO$$
+0c219ea0   HOSTclose
+0c218a00   HOSTlseek
+0c218d00   HOSTopen
+0c2194e0   HOSTread
+0c217620   HOSTrename
+0c2195a0   HOSTunlink
+0c219660   HOSTwrite
+0c214cc0   _Z10AcCvtColorPhS_i
+0c21ab80   _Z10cvAlignPtrPKvi
+0c21b380   _Z11cvAlignLeftii
+0c21b0c0   _Z12cvGetMatSizePK5CvMat
+0c21abe0   _Z14cvCvToIplDepthi
+0c212e04   _Z20icvPthreadDestructorPv
+0c21ac40   _Z6cvRectiiii
+0c21b100   _Z6cvSizeii
+0c21aca0   _Z7cvAlignii
+0c21a580   _Z7cvRoundd
+0c219f40   _Z7icvMed3PcS_S_PFYiPKvS1_PvES2_
+0c214d94   _Z8CvtColorP9_IplImageS0_i
+0c21ecf0   _ZZ10cvAlignPtrPKviEs
+0c21eda0   _ZZ16cvSetRemoveByPtrEs
+0c21ec80   _ZZ7cvAligniiEs
+0c2221d8   __CIOBUF_
+0c222c98   __TI_CINIT_Base
+0c222cb0   __TI_CINIT_Limit
+0c222c78   __TI_Handler_Table_Base
+0c222c84   __TI_Handler_Table_Limit
+0c220e78   __TI_STACK_END
+00002000   __TI_STACK_SIZE
+0c21ee74   __TI_STATIC_BASE
+00200000   __TI_SYSMEM_SIZE
+00000001   __TI_args_main
+0c21b4c0   __TI_decompress_none
+0c21b4e0   __TI_decompress_rle24
+0c2213bc   __TI_enable_exit_profile_output
+ffffffff   __TI_pprof_out_hndl
+ffffffff   __TI_prof_data_size
+ffffffff   __TI_prof_data_start
+0c219160   __TI_zero_init
+ffffffff   __binit__
+0c21ad00   __c6xabi_abort_msg
+0c212f80   __c6xabi_divd
+0c218de0   __c6xabi_divi
+0c219720   __c6xabi_divu
+0c2177c0   __c6xabi_divul
+0c216600   __c6xabi_divull
+0c21ad60   __c6xabi_frcmpyd_div
+0c21b140   __c6xabi_isinf
+0c21a600   __c6xabi_llshl
+0c21adc0   __c6xabi_llshru
+0c21b3a0   __c6xabi_negll
+0c2197e0   __c6xabi_remi
+0c21b1c0   __c6xabi_strasgi_64plus
+ffffffff   __c_args__
+0c218de0   __divi
+0c219720   __divu
+0c2197e0   __remi
+0c21b1c0   __strasgi_64plus
+0c21b200   _args_main
+0c217ae0   _auto_init_elf
+0c217f60   _buff_read
+0c21a680   _c_int00
+0c2198a0   _cleanup
+0c2213b4   _cleanup_ptr
+0c21ea20   _ctypes_
+0c219960   _doflush
+0c2213b8   _dtors_ptr
+0c2211b8   _ft_end
+0c220e80   _ftable
+0c221178   _lock
+0c21a700   _minit
+0c21b3c0   _nop
+0c214400   _printfi
+0c219a20   _rd_ok
+0c21ee78   _stack
+0c21ae20   _subcull
+0c000000   _sys_memory
+0c221d50   _tmpnams
+0c22117c   _unlock
+0c2186a0   _wrt_ok
+0c21b480   abort
+0c218fa0   atoi
+ffffffff   binit
+0c21b280   ceil
+0c219080   close
+0c218b00   copy_in
+0c21a880   cvAlloc
+0c20b568   cvChangeSeqBlock
+0c209238   cvCheckTermCriteria
+0c210628   cvClearGraph
+0c2097f0   cvClearMemStorage
+0c206e0c   cvClearND
+0c20d0e4   cvClearSeq
+0c2104ac   cvClearSet
+0c211d88   cvCloneGraph
+0c2090ec   cvCloneImage
+0c2005d4   cvCloneMat
+0c200b8c   cvCloneMatND
+0c201c34   cvCloneSparseMat
+0c2148c0   cvCopy
+0c209558   cvCreateChildMemStorage
+0c202558   cvCreateData
+0c210510   cvCreateGraph
+0c211690   cvCreateGraphScanner
+0c208708   cvCreateImage
+0c208640   cvCreateImageHeader
+0c200000   cvCreateMat
+0c2000ec   cvCreateMatHeader
+0c2009ec   cvCreateMatND
+0c200a94   cvCreateMatNDHeader
+0c2094ac   cvCreateMemStorage
+0c209e24   cvCreateSeq
+0c20b2b0   cvCreateSeqBlock
+0c210114   cvCreateSet
+0c2017cc   cvCreateSparseMat
+0c20a424   cvCvtSeqToArray
+0c2187c0   cvDecRefData
+0c20b170   cvEndWriteSeq
+0c212d18   cvError
+0c212e18   cvErrorFromIppStatus
+0c212ab4   cvErrorStr
+0c210a78   cvFindGraphEdge
+0c210964   cvFindGraphEdgeByPtr
+0c20b054   cvFlushSeqWriter
+0c21a8cc   cvFree_
+0c2058e8   cvGet1D
+0c205ae0   cvGet2D
+0c205cd0   cvGet3D
+0c203dac   cvGetCols
+0c203fe4   cvGetDiag
+0c20350c   cvGetDimSize
+0c203328   cvGetDims
+0c2031ec   cvGetElemType
+0c2129f8   cvGetErrInfo
+0c212cb0   cvGetErrMode
+0c212cf0   cvGetErrStatus
+0c2083b4   cvGetImage
+0c209084   cvGetImageCOI
+0c208eb0   cvGetImageROI
+0c206ee0   cvGetMat
+0c205dcc   cvGetND
+0c219ae0   cvGetNextSparseNode
+0c202ee8   cvGetRawData
+0c205ea8   cvGetReal1D
+0c206084   cvGetReal2D
+0c20624c   cvGetReal3D
+0c206324   cvGetRealND
+0c203b38   cvGetRows
+0c20a130   cvGetSeqElem
+0c20b68c   cvGetSeqReaderPos
+0c21b2c0   cvGetSetElem
+0c203778   cvGetSize
+0c203890   cvGetSubRect
+0c210e20   cvGraphAddEdge
+0c210aec   cvGraphAddEdgeByPtr
+0c210678   cvGraphAddVtx
+0c2110f8   cvGraphRemoveEdge
+0c210ea0   cvGraphRemoveEdgeByPtr
+0c210878   cvGraphRemoveVtx
+0c210798   cvGraphRemoveVtxByPtr
+0c211238   cvGraphVtxDegree
+0c211160   cvGraphVtxDegreeByPtr
+0c212930   cvGuiBoxReport
+0c2087cc   cvInitImageHeader
+0c2002a4   cvInitMatHeader
+0c200724   cvInitMatNDHeader
+0c200fa0   cvInitNArrayIterator
+0c201d34   cvInitSparseMatIterator
+0c212500   cvInitTreeNodeIterator
+0c212330   cvInsertNodeIntoTree
+0c20a568   cvMakeSeqHeaderForArray
+0c209bec   cvMemStorageAlloc
+0c209d88   cvMemStorageAllocString
+0c211980   cvNextGraphItem
+0c201624   cvNextNArraySlice
+0c2125a0   cvNextTreeNode
+0c212958   cvNulDevReport
+0c212698   cvPrevTreeNode
+0c204b90   cvPtr1D
+0c20508c   cvPtr2D
+0c205540   cvPtr3D
+0c2056cc   cvPtrND
+0c204720   cvRawDataToScalar
+0c212984   cvRedirectError
+0c202e00   cvReleaseData
+0c2118cc   cvReleaseGraphScanner
+0c208bd4   cvReleaseImage
+0c208b50   cvReleaseImageHeader
+0c2004d8   cvReleaseMat
+0c21b4a0   cvReleaseMatND
+0c209750   cvReleaseMemStorage
+0c201b60   cvReleaseSparseMat
+0c2123f4   cvRemoveNodeFromTree
+0c208e50   cvResetImageROI
+0c207fc0   cvReshape
+0c2075a8   cvReshapeMatND
+0c209b0c   cvRestoreMemStoragePos
+0c209aa4   cvSaveMemStoragePos
+0c2042e0   cvScalarToRawData
+0c20a248   cvSeqElemIdx
+0c20c258   cvSeqInsert
+0c20d8a8   cvSeqInsertSlice
+0c20f8b4   cvSeqInvert
+0c20fa40   cvSeqPartition
+0c20bcf0   cvSeqPop
+0c20c0a0   cvSeqPopFront
+0c20ce0c   cvSeqPopMulti
+0c20bb0c   cvSeqPush
+0c20bec8   cvSeqPushFront
+0c20cb2c   cvSeqPushMulti
+0c20c7b0   cvSeqRemove
+0c20d448   cvSeqRemoveSlice
+0c20f530   cvSeqSearch
+0c20d134   cvSeqSlice
+0c20e040   cvSeqSort
+0c2063f0   cvSet1D
+0c2065b4   cvSet2D
+0c20676c   cvSet3D
+0c2101e0   cvSetAdd
+0c2028f8   cvSetData
+0c212cc4   cvSetErrMode
+0c212d04   cvSetErrStatus
+0c208f8c   cvSetImageCOI
+0c208c40   cvSetImageROI
+0c206830   cvSetND
+0c21a780   cvSetNew
+0c2068d4   cvSetReal1D
+0c206ab4   cvSetReal2D
+0c206c80   cvSetReal3D
+0c206d4c   cvSetRealND
+0c21044c   cvSetRemove
+0c21a800   cvSetRemoveByPtr
+0c20a000   cvSetSeqBlockSize
+0c20b76c   cvSetSeqReaderPos
+0c214c24   cvSetZero
+0c20a394   cvSliceLength
+0c20af00   cvStartAppendToSeq
+0c20b388   cvStartReadSeq
+0c20afb0   cvStartWriteSeq
+0c21282c   cvStdErrReport
+0c212234   cvTreeToNodeSeq
+0c219240   exit
+0c2188e0   fclose
+0c218c00   fflush
+0c21b300   floor
+0c21ae80   fopen
+0c21a900   fprintf
+0c2181e0   fputc
+0c2150c0   fputs
+0c215c00   fread
+0c216120   free
+0c219ba0   fseek
+0c213f80   fwrite
+0c21e070   icv8x32fTab
+0c214860   icvCopy_8u_C1R
+0c21ee60   icvDepthToType
+0c219c60   lseek
+0c219320   ltoa
+0c214ec0   main
+0c217460   malloc
+0c2163a0   memalign
+0c21aee0   memccpy
+0c21a260   memcpy
+0c21af40   memmove
+0c219400   memset
+0c21a3a0   modf
+0c217c60   open
+0c21a980   printf
+0c219d20   read
+0c21aa00   readmsg
+0c21ab00   remove
+0c217de0   setvbuf
+0c21afa0   sprintf
+0c21b000   strcpy
+0c21b340   strlen
+0c21aa80   strncpy
+0c21ab00   unlink
+0c219de0   write
+0c21b060   writemsg
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00002000   __TI_STACK_SIZE
+00200000   __TI_SYSMEM_SIZE
+0c000000   _sys_memory
+0c200000   cvCreateMat
+0c2000ec   cvCreateMatHeader
+0c2002a4   cvInitMatHeader
+0c2004d8   cvReleaseMat
+0c2005d4   cvCloneMat
+0c200724   cvInitMatNDHeader
+0c2009ec   cvCreateMatND
+0c200a94   cvCreateMatNDHeader
+0c200b8c   cvCloneMatND
+0c200fa0   cvInitNArrayIterator
+0c201624   cvNextNArraySlice
+0c2017cc   cvCreateSparseMat
+0c201b60   cvReleaseSparseMat
+0c201c34   cvCloneSparseMat
+0c201d34   cvInitSparseMatIterator
+0c202558   cvCreateData
+0c2028f8   cvSetData
+0c202e00   cvReleaseData
+0c202ee8   cvGetRawData
+0c2031ec   cvGetElemType
+0c203328   cvGetDims
+0c20350c   cvGetDimSize
+0c203778   cvGetSize
+0c203890   cvGetSubRect
+0c203b38   cvGetRows
+0c203dac   cvGetCols
+0c203fe4   cvGetDiag
+0c2042e0   cvScalarToRawData
+0c204720   cvRawDataToScalar
+0c204b90   cvPtr1D
+0c20508c   cvPtr2D
+0c205540   cvPtr3D
+0c2056cc   cvPtrND
+0c2058e8   cvGet1D
+0c205ae0   cvGet2D
+0c205cd0   cvGet3D
+0c205dcc   cvGetND
+0c205ea8   cvGetReal1D
+0c206084   cvGetReal2D
+0c20624c   cvGetReal3D
+0c206324   cvGetRealND
+0c2063f0   cvSet1D
+0c2065b4   cvSet2D
+0c20676c   cvSet3D
+0c206830   cvSetND
+0c2068d4   cvSetReal1D
+0c206ab4   cvSetReal2D
+0c206c80   cvSetReal3D
+0c206d4c   cvSetRealND
+0c206e0c   cvClearND
+0c206ee0   cvGetMat
+0c2075a8   cvReshapeMatND
+0c207fc0   cvReshape
+0c2083b4   cvGetImage
+0c208640   cvCreateImageHeader
+0c208708   cvCreateImage
+0c2087cc   cvInitImageHeader
+0c208b50   cvReleaseImageHeader
+0c208bd4   cvReleaseImage
+0c208c40   cvSetImageROI
+0c208e50   cvResetImageROI
+0c208eb0   cvGetImageROI
+0c208f8c   cvSetImageCOI
+0c209084   cvGetImageCOI
+0c2090ec   cvCloneImage
+0c209238   cvCheckTermCriteria
+0c2094ac   cvCreateMemStorage
+0c209558   cvCreateChildMemStorage
+0c209750   cvReleaseMemStorage
+0c2097f0   cvClearMemStorage
+0c209aa4   cvSaveMemStoragePos
+0c209b0c   cvRestoreMemStoragePos
+0c209bec   cvMemStorageAlloc
+0c209d88   cvMemStorageAllocString
+0c209e24   cvCreateSeq
+0c20a000   cvSetSeqBlockSize
+0c20a130   cvGetSeqElem
+0c20a248   cvSeqElemIdx
+0c20a394   cvSliceLength
+0c20a424   cvCvtSeqToArray
+0c20a568   cvMakeSeqHeaderForArray
+0c20af00   cvStartAppendToSeq
+0c20afb0   cvStartWriteSeq
+0c20b054   cvFlushSeqWriter
+0c20b170   cvEndWriteSeq
+0c20b2b0   cvCreateSeqBlock
+0c20b388   cvStartReadSeq
+0c20b568   cvChangeSeqBlock
+0c20b68c   cvGetSeqReaderPos
+0c20b76c   cvSetSeqReaderPos
+0c20bb0c   cvSeqPush
+0c20bcf0   cvSeqPop
+0c20bec8   cvSeqPushFront
+0c20c0a0   cvSeqPopFront
+0c20c258   cvSeqInsert
+0c20c7b0   cvSeqRemove
+0c20cb2c   cvSeqPushMulti
+0c20ce0c   cvSeqPopMulti
+0c20d0e4   cvClearSeq
+0c20d134   cvSeqSlice
+0c20d448   cvSeqRemoveSlice
+0c20d8a8   cvSeqInsertSlice
+0c20e040   cvSeqSort
+0c20f530   cvSeqSearch
+0c20f8b4   cvSeqInvert
+0c20fa40   cvSeqPartition
+0c210114   cvCreateSet
+0c2101e0   cvSetAdd
+0c21044c   cvSetRemove
+0c2104ac   cvClearSet
+0c210510   cvCreateGraph
+0c210628   cvClearGraph
+0c210678   cvGraphAddVtx
+0c210798   cvGraphRemoveVtxByPtr
+0c210878   cvGraphRemoveVtx
+0c210964   cvFindGraphEdgeByPtr
+0c210a78   cvFindGraphEdge
+0c210aec   cvGraphAddEdgeByPtr
+0c210e20   cvGraphAddEdge
+0c210ea0   cvGraphRemoveEdgeByPtr
+0c2110f8   cvGraphRemoveEdge
+0c211160   cvGraphVtxDegreeByPtr
+0c211238   cvGraphVtxDegree
+0c211690   cvCreateGraphScanner
+0c2118cc   cvReleaseGraphScanner
+0c211980   cvNextGraphItem
+0c211d88   cvCloneGraph
+0c212234   cvTreeToNodeSeq
+0c212330   cvInsertNodeIntoTree
+0c2123f4   cvRemoveNodeFromTree
+0c212500   cvInitTreeNodeIterator
+0c2125a0   cvNextTreeNode
+0c212698   cvPrevTreeNode
+0c21282c   cvStdErrReport
+0c212930   cvGuiBoxReport
+0c212958   cvNulDevReport
+0c212984   cvRedirectError
+0c2129f8   cvGetErrInfo
+0c212ab4   cvErrorStr
+0c212cb0   cvGetErrMode
+0c212cc4   cvSetErrMode
+0c212cf0   cvGetErrStatus
+0c212d04   cvSetErrStatus
+0c212d18   cvError
+0c212e04   _Z20icvPthreadDestructorPv
+0c212e18   cvErrorFromIppStatus
+0c212f80   __c6xabi_divd
+0c213f80   fwrite
+0c214400   _printfi
+0c214860   icvCopy_8u_C1R
+0c2148c0   cvCopy
+0c214c24   cvSetZero
+0c214cc0   _Z10AcCvtColorPhS_i
+0c214d94   _Z8CvtColorP9_IplImageS0_i
+0c214ec0   main
+0c2150c0   fputs
+0c215c00   fread
+0c216120   free
+0c2163a0   memalign
+0c216600   __c6xabi_divull
+0c217460   malloc
+0c217620   HOSTrename
+0c2177c0   __c6xabi_divul
+0c217ae0   _auto_init_elf
+0c217c60   open
+0c217de0   setvbuf
+0c217f60   _buff_read
+0c2181e0   fputc
+0c2186a0   _wrt_ok
+0c2187c0   cvDecRefData
+0c2188e0   fclose
+0c218a00   HOSTlseek
+0c218b00   copy_in
+0c218c00   fflush
+0c218d00   HOSTopen
+0c218de0   __c6xabi_divi
+0c218de0   __divi
+0c218fa0   atoi
+0c219080   close
+0c219160   __TI_zero_init
+0c219240   exit
+0c219320   ltoa
+0c219400   memset
+0c2194e0   HOSTread
+0c2195a0   HOSTunlink
+0c219660   HOSTwrite
+0c219720   __c6xabi_divu
+0c219720   __divu
+0c2197e0   __c6xabi_remi
+0c2197e0   __remi
+0c2198a0   _cleanup
+0c219960   _doflush
+0c219a20   _rd_ok
+0c219ae0   cvGetNextSparseNode
+0c219ba0   fseek
+0c219c60   lseek
+0c219d20   read
+0c219de0   write
+0c219ea0   HOSTclose
+0c219f40   _Z7icvMed3PcS_S_PFYiPKvS1_PvES2_
+0c21a260   memcpy
+0c21a3a0   modf
+0c21a580   _Z7cvRoundd
+0c21a600   __c6xabi_llshl
+0c21a680   _c_int00
+0c21a700   _minit
+0c21a780   cvSetNew
+0c21a800   cvSetRemoveByPtr
+0c21a880   cvAlloc
+0c21a8cc   cvFree_
+0c21a900   fprintf
+0c21a980   printf
+0c21aa00   readmsg
+0c21aa80   strncpy
+0c21ab00   remove
+0c21ab00   unlink
+0c21ab80   _Z10cvAlignPtrPKvi
+0c21abe0   _Z14cvCvToIplDepthi
+0c21ac40   _Z6cvRectiiii
+0c21aca0   _Z7cvAlignii
+0c21ad00   __c6xabi_abort_msg
+0c21ad60   __c6xabi_frcmpyd_div
+0c21adc0   __c6xabi_llshru
+0c21ae20   _subcull
+0c21ae80   fopen
+0c21aee0   memccpy
+0c21af40   memmove
+0c21afa0   sprintf
+0c21b000   strcpy
+0c21b060   writemsg
+0c21b0b8   C$$IO$$
+0c21b0c0   _Z12cvGetMatSizePK5CvMat
+0c21b100   _Z6cvSizeii
+0c21b140   __c6xabi_isinf
+0c21b1c0   __c6xabi_strasgi_64plus
+0c21b1c0   __strasgi_64plus
+0c21b200   _args_main
+0c21b280   ceil
+0c21b2c0   cvGetSetElem
+0c21b300   floor
+0c21b340   strlen
+0c21b380   _Z11cvAlignLeftii
+0c21b3a0   __c6xabi_negll
+0c21b3c0   _nop
+0c21b480   C$$EXIT
+0c21b480   abort
+0c21b4a0   cvReleaseMatND
+0c21b4c0   __TI_decompress_none
+0c21b4e0   __TI_decompress_rle24
+0c21e070   icv8x32fTab
+0c21ea20   _ctypes_
+0c21ec80   _ZZ7cvAligniiEs
+0c21ecf0   _ZZ10cvAlignPtrPKviEs
+0c21eda0   _ZZ16cvSetRemoveByPtrEs
+0c21ee60   icvDepthToType
+0c21ee74   __TI_STATIC_BASE
+0c21ee78   _stack
+0c220e78   __TI_STACK_END
+0c220e80   _ftable
+0c221178   _lock
+0c22117c   _unlock
+0c2211b8   _ft_end
+0c2213b4   _cleanup_ptr
+0c2213b8   _dtors_ptr
+0c2213bc   __TI_enable_exit_profile_output
+0c221d50   _tmpnams
+0c2221d8   __CIOBUF_
+0c222c78   __TI_Handler_Table_Base
+0c222c84   __TI_Handler_Table_Limit
+0c222c98   __TI_CINIT_Base
+0c222cb0   __TI_CINIT_Limit
+ffffffff   __TI_pprof_out_hndl
+ffffffff   __TI_prof_data_size
+ffffffff   __TI_prof_data_start
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+
+[281 symbols]

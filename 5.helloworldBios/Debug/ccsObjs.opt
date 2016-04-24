@@ -1,0 +1,1 @@
+-l"./configPkg/linker.cmd" "./hello.obj" -l"libc.a" 

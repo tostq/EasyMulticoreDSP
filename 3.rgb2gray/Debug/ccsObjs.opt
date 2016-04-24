@@ -1,0 +1,1 @@
+"./rgb2gray.obj" -l"libc.a" "../C6678_unified.cmd" "../emcv.lib" 

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--  This file conforms to the DTD xdc/bld/release.dtd -->
+<release name="custom_vlfft_evmc6670l_core0" label="default" date="1345831190214" buildCount="2" producerId="undefined">
+<package name="custom.vlfft.evmc6670l.core0"
+    version=""/>
+<imports>
+</imports>
+<references>
+    <package name="xdc"
+        version="1, 1, 1, 1335562206665"
+        providerId="xdccore">
+        <file name="IPackage.xdc"/>
+        <file name="IPackage.xs"/>
+        <file name="om2.xs"/>
+        <file name="package.xs"/>
+        <file name="template.xs"/>
+        <file name="xdc.tci"/>
+        <file name="xmlgen.xs"/>
+        <file name="xmlgen2.xs"/>
+    </package>
+    <package name="xdc.services.global"
+        version="1, 0, 0, 1335562234325"
+        providerId="xdccore">
+        <file name="Clock.xs"/>
+        <file name="Trace.xs"/>
+        <file name="java\package.jar"/>
+    </package>
+    <package name="xdc.bld"
+        version="1, 0, 2, 1335562213783"
+        providerId="xdccore">
+        <file name="BuildEnvironment.xs"/>
+        <file name="Configuration.xs"/>
+        <file name="Executable.xs"/>
+        <file name="ITarget.xs"/>
+        <file name="ITarget2.xs"/>
+        <file name="ITargetFilter.xs"/>
+        <file name="Library.xs"/>
+        <file name="Manifest.xs"/>
+        <file name="PackageContents.xs"/>
+        <file name="Repository.xs"/>
+        <file name="Script.xs"/>
+        <file name="Utils.xs"/>
+        <file name="_gen.xs"/>
+        <file name="bld.js"/>
+        <file name="package.xs"/>
+    </package>
+    <package name="xdc.platform"
+        version="1, 0, 1, 0, 1335562219407"
+        providerId="xdccore">
+        <file name="ICpuDataSheet.xdc"/>
+        <file name="IExeContext.xdc"/>
+        <file name="IPeripheral.xdc"/>
+        <file name="IPlatform.xdc"/>
+    </package>
+    <package name="ti.platforms.generic"
+        version="1, 0, 0, 1, 1335304758155"
+        providerId="xdccore">
+        <file name="Platform.xdc"/>
+    </package>
+    <package name="xdc.shelf"
+        version="1, 0, 0, 1335562255230"
+        providerId="xdccore">
+        <file name="java\antlr.jar"/>
+        <file name="java\ecj.jar"/>
+        <file name="java\js.jar"/>
+        <file name="java\tar.jar"/>
+    </package>
+    <package name="xdc.services.intern.cmd"
+        version="1, 0, 0, 0, 1335562238049"
+        providerId="xdccore">
+        <file name="java\package.jar"/>
+    </package>
+    <package name="xdc.services.intern.xsr"
+        version="1, 0, 0, 1335562239186"
+        providerId="xdccore">
+        <file name="java\package.jar"/>
+    </package>
+    <package name="xdc.services.intern.gen"
+        version="1, 0, 0, 0, 1335562238884"
+        providerId="xdccore">
+        <file name="java\package.jar"/>
+    </package>
+    <package name="xdc.services.spec"
+        version="1, 0, 0, 0, 1335562248070"
+        providerId="xdccore">
+        <file name="java\package.jar"/>
+    </package>
+    <xdcRoot base="C:/ti/xdctools_3_23_03_53/">
+        <file name="/packages/xdc/package.xdc"/>
+        <file name="include\utils.tci"/>
+        <xdcCorePkg version="16, 0, 2, 0, 1335562215118" producerId="/db/ztree/library/trees/xdc/xdc-y25x/src/packages" buildCount="364" releaseName="xdc_corevers" label="default" date="1335562215118"/>
+    </xdcRoot>
+</references>
+<orphans>
+</orphans>
+</release>
