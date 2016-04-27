@@ -1,0 +1,1 @@
+-l"./configPkg/linker.cmd" "./notify_multicore.obj" -l"libc.a" 
