@@ -1,0 +1,7 @@
+/* THIS IS A GENERATED FILE -- DO NOT EDIT */
+/* configuro was passed the target's name explicitly */
+var target  = xdc.module('ti.targets.elf.C66');
+target.ccOpts.prefix = "-g --optimize_with_debug " + target.ccOpts.prefix;
+Build.targets = [target];
+/* configuro was passed the target's rootDir explicitly */
+Build.targets[0].rootDir = 'D:/ti/C6000 Code Generation Tools 7.4.2';

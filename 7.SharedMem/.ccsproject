@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?ccsproject version="1.0"?>
+
+<projectOptions>
+<deviceVariant value="com.ti.ccstudio.deviceModel.C6000.GenericC66xxDevice"/>
+<deviceFamily value="C6000"/>
+<deviceEndianness value="little"/>
+<codegenToolVersion value="7.4.2"/>
+<isElfFormat value="true"/>
+<connection value=""/>
+<rts value="libc.a"/>
+<templateProperties value="id=com.ti.rtsc.SYSBIOS.example_9,type=rtsc,products=com.ti.rtsc.SYSBIOS,buildProfile=release,isHybrid=true,configuroOptions=--compileOptions &quot;-g --optimize_with_debug&quot;,"/>
+</projectOptions>

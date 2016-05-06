@@ -1,0 +1,1 @@
+-l"./configPkg/linker.cmd" "./SharedMemory.obj" -l"libc.a" 
