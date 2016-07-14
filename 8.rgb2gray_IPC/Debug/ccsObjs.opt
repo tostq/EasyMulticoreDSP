@@ -1,0 +1,1 @@
+-l"./configPkg/linker.cmd" "./rgb2gray_IPC.obj" -l"libc.a" 

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="GBK"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xconfig_rgb2gray_IPC" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/rgb2gray_IPC_pe66.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="E:/Code/CCS/workspace_v5_2/rgb2gray_IPC/rgb2gray_IPC.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/rgb2gray_IPC_pe66.mak" src="package.bld"/>
+        <srcFile name="package/cfg/rgb2gray_IPC_pe66.oe66.dep" src="package/cfg/rgb2gray_IPC_pe66.c"/>
+        <srcFile name="package/cfg/rgb2gray_IPC_pe66.dep" src="package/cfg/rgb2gray_IPC_pe66.cfg"/>
+        <srcFile name="package/cfg/rgb2gray_IPC.xe66.mak" src="package.bld"/>
+        <srcFile name="package/rel/xconfig_rgb2gray_IPC.tar.dep" src="package/rel/xconfig_rgb2gray_IPC.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.elf.C66"
+            version="ti.targets.elf.C66{1,0,7.3,4"
+            platform="ti.platforms.simTCI6616"
+            isa="66"
+            suffix="e66"
+            rootDir="D:/ti/ccsv5/tools/compiler/c6000_7.3.4"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="rgb2gray_IPC"
+        pname="rgb2gray_IPC.pe66"
+        target="ti.targets.elf.C66"
+        platform="ti.sdo.ipc.examples.platforms.evm6678.core0"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/rgb2gray_IPC_pe66.cfg"
+        xCfgPrefix="package/cfg/rgb2gray_IPC_pe66"
+        cfgScript="E:/Code/CCS/workspace_v5_2/rgb2gray_IPC/rgb2gray_IPC.cfg"
+        cfgArgs="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="rgb2gray_IPC"
+        pname="rgb2gray_IPC.xe66"
+        target="ti.targets.elf.C66"
+        platform="ti.sdo.ipc.examples.platforms.evm6678.core0"
+        profile="release"
+        xCfgScript="package/cfg/rgb2gray_IPC_pe66.cfg"
+        xCfgPrefix="package/cfg/rgb2gray_IPC_pe66"
+        cfgScript="E:/Code/CCS/workspace_v5_2/rgb2gray_IPC/rgb2gray_IPC.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="rgb2gray_IPC.xe66"
+        args=""
+        groupName="rgb2gray_IPC.xe66"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xconfig_rgb2gray_IPC"
+        pname="xconfig_rgb2gray_IPC.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/package.ext.xml"/>
+        <file name="package/package.rel.dot"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

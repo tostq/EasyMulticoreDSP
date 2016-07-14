@@ -1,0 +1,84 @@
+/* THIS IS A GENERATED FILE -- DO NOT EDIT */
+
+var targ = xdc.module('ti.targets.elf.C66');
+/* configuro was told the platform explicitly */
+var platform = 'ti.sdo.ipc.examples.platforms.evm6678.core0';
+
+/* decide whether to make an assembly or an executable */
+var makeAssembly = false;
+
+
+var Executable = xdc.module('xdc.bld.Executable');
+
+var exeOpts = new Executable.Attrs({
+        cfgScript: 'E:/Code/CCS/workspace_v5_2/rgb2gray_IPC/notify_multicore.cfg',
+        profile: 'release',
+        cfgHome: 'xconfig_notify_multicore',
+});
+
+/* if the build model supports encoded cfgArgs, use it */
+if ('cfgArgsEncoded' in exeOpts) {
+    exeOpts.cfgArgs = 'null';
+    exeOpts.cfgArgsEncoded = true;
+}
+else {
+    /* otherwise, we must risk errors if cfgArgs contains embedded 's */
+    exeOpts.cfgArgs = 'null';
+}
+
+var exe = Pkg[makeAssembly ? 'addAssembly': 'addExecutable'](
+    'notify_multicore',
+    targ,
+    platform,
+    exeOpts
+);
+
+/*
+ * Generate the compiler.opt file
+ * Do this here instead of during the initial creation of the configuro
+ * package, because the contents of any config.bld script are unknown
+ * at that time. Config.bld can't be executed until the XDC build phase.
+ */
+if (makeAssembly) {
+    var suffix  = targ.dllExt || '.p' + targ.suffix;
+}
+else {
+    var suffix  = '.p' + targ.suffix;
+}
+var thisObj = {
+    cfg:        'E:/Code/CCS/workspace_v5_2/rgb2gray_IPC/notify_multicore.cfg',
+    outputPath: 'E:/Code/CCS/workspace_v5_2/rgb2gray_IPC/.config/xconfig_notify_multicore',
+    exeName:    'notify_multicore' + suffix,
+    exeIntName: 'notify_multicore' + suffix.replace('.', '_'),
+    targ:       targ,
+    legacyTcf:  false,
+    bios5Incs:  false,
+    linkerCommandFile: 'linker.cmd',
+    makeAssembly: makeAssembly
+};
+var tmpl = xdc.loadTemplate('xdc/tools/configuro/template/compiler.opt.xdt');
+tmpl.genFile('compiler.opt', thisObj, [], false);
+
+/*
+ * Generate the custom makefile.
+ */
+var tmpl = xdc.loadTemplate('xdc/tools/configuro/template/' + 
+    (makeAssembly? 'custom.mak.asm.xdt' : 'custom.mak.exe.xdt'));
+tmpl.genFile('custom.mak', thisObj, [], false);
+Pkg.makeEpilogue = "include custom.mak";
+
+/*
+ * Generate the package script.
+ */
+var tmpl = xdc.loadTemplate('xdc/tools/configuro/template/package.xs.xdt');
+tmpl.genFile('package.xs', thisObj, [], false);
+
+if (makeAssembly) {
+/*
+ * Generate the linker options into a staging file, so that the presence or
+ * age of the advertised linker command file can be the makefile trigger to
+ * rebuild the package from the user's config script.
+ */
+    var tmpl = xdc.loadTemplate('xdc/tools/configuro/template/linker.cmd.asm.xdt');
+    tmpl.genFile('linker.cmd.cp', thisObj, [], false);
+}

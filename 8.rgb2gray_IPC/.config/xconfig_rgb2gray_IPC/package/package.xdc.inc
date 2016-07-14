@@ -1,0 +1,12 @@
+package.xdc
+package.xs
+package/xconfig_rgb2gray_IPC.sch
+package/.vers_g180
+package/.vers_r170
+package/.vers_b150
+package/.xdc-y25
+package/xconfig_rgb2gray_IPC.java
+package/xconfig_rgb2gray_IPC.class
+package/package_xconfig_rgb2gray_IPC.c
+package/package.defs.h
+package/xconfig_rgb2gray_IPC.ccs
