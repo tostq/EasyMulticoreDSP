@@ -1,5 +1,8 @@
-# EasyMulticoreDSP
-This is an easy project to learn Multi-core DSP
-这是一个学习多核DSP快速教程的项目
-关于这里代码的说明可以参见个人博客
-http://blog.csdn.net/tostq/article/category/6201995
+# Introduction
+- This is an easy project to learn Multi-core DSP
+
+# 中文说明
+这是一个快速学习多核DSP的项目
+
+详细请参见个人博客
+[http://blog.csdn.net/tostq/article/category/6201995](http://blog.csdn.net/tostq/article/category/6201995)
